@@ -23,7 +23,7 @@ class other
 
     private string $timezone = "";
 
-    private string $messageTechnicalWork = "L2Ember is currently in maintenance.";
+    private string $messageTechnicalWork = "";
 
     private string $keywords = "";
 

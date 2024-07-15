@@ -14,11 +14,11 @@ class captcha
 
     private bool $defaultCaptcha = false;
 
-    private bool $googleCaptcha = false;
+    private bool $googleCaptcha = true;
 
-    private string $googleClientKey = "";
+    private string $googleClientKey = "6LfYfBAqAAAAAGcGPhaAELg4dM8SwtrcJvikjAPk";
 
-    private string $googleServerKey = "";
+    private string $googleServerKey = "6LfYfBAqAAAAACo159qCMiiN4MEnqnLducBWJrov";
 
     public function __construct()
     {

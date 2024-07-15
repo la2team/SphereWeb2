@@ -12,7 +12,7 @@ use SimpleCaptcha\Builder;
 class captcha
 {
 
-    private bool $defaultCaptcha = false;
+    private bool $defaultCaptcha = true;
 
     private bool $googleCaptcha = false;
 

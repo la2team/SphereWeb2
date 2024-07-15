@@ -9,15 +9,15 @@ class other
 
     private bool $openPassword = false;
 
-    private bool $enableTechnicalWork = true;
+    private bool $enableTechnicalWork = false;
 
     private bool $saveStatisticData = false;
 
     private bool $isAuthShow = false;
 
-    private string $allTitlePage = "L2Ember - Interlude;
+    private string $allTitlePage = "";
 
-    private float $onlineMul = 3;
+    private float $onlineMul = 0;
 
     private int $timeoutSaveStatistic = 0;
 
@@ -31,7 +31,7 @@ class other
 
     private int $maxAccount = 30;
 
-    private string $contactAdmin = "https://discord.gg/S9j2YTuvjw";
+    private string $contactAdmin = "";
 
     public function __construct()
     {

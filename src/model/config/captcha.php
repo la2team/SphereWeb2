@@ -16,9 +16,9 @@ class captcha
 
     private bool $googleCaptcha = true;
 
-    private string $googleClientKey = "6Lfh-DIpAAAAAGb6YBzAvsFJkyReyfs_3QvJnbtJ";
+    private string $googleClientKey = "6LfYfBAqAAAAAGcGPhaAELg4dM8SwtrcJvikjAPk";
 
-    private string $googleServerKey = "6Lfh-DIpAAAAAOyvREUCBYINN_4pIjysjjvwjkLy";
+    private string $googleServerKey = "6LfYfBAqAAAAACo159qCMiiN4MEnqnLducBWJrov";
 
     public function __construct()
     {

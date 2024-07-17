@@ -4,7 +4,7 @@
  * Github -> https://github.com/Cannabytes/SphereWeb
  * Date: 17.08.2022 / 19:21:01
  */
-
+test
 namespace Ofey\Logan22\model\admin;
 
 use Ofey\Logan22\component\alert\board;

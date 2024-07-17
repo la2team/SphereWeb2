@@ -7,7 +7,7 @@ use Ofey\Logan22\model\db\sql;
 class onlineCheating
 {
 
-    private bool $enabled = false;
+    private bool $enabled = true;
 
     private int $minOnlineShow = 0;
 

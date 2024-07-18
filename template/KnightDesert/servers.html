@@ -14,14 +14,14 @@
                     </div>
                     <div class="server__online">
                         {% if server.connect_game %}
-                            Online
+                        <span class="color-orange">Online</span>
                         {% else %}
                             Offline
                         {% endif %}
                     </div>
                 </div>
                 <div class="server__progress" data-gw-server-online="{{ server.player_count_online }}" data-gw-server-online-max="{{ maxOnline[loop.index0] }}">
-                    <div class="server__load" data-server-load="" style="width: 100%;"></div>
+                    <div class="server__load" data-server-load="" style="width: {% if server.connect_game %}100{% else %}0{% endif %}%;"></div>
                 </div>
             </div>
         </a>

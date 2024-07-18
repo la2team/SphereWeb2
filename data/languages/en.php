@@ -181,7 +181,7 @@ return [
 	'178' => 'Registration failed',
 	'179' => 'This password doesn\'t work, please create a new one',
 	'180' => 'Password change failed',
-	'181' => 'Password changed successfully',
+	'181' => 'Password was successfully changed',
 	'182' => 'Data has not been updated',
 	'183' => 'Data updated',
 	'184' => 'Signature limited to 400 characters',

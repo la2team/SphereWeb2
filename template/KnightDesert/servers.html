@@ -13,7 +13,7 @@
                         - {{ server.chronicle }}
                     </div>
                     <div class="server__online">
-                        {% if server.connect_game %}
+                        {% if server.getStatus().getGameServer() %}
                         <span class="color-orange">Online</span>
                         {% else %}
                             Offline

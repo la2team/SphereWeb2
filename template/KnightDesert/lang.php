@@ -84,7 +84,7 @@ return [
 
         'events_title' => 'Upcoming <span class="color-orange">events</span>',
 
-        'footer_title' => 'Lineage II <span class="color-orange">Ember</span>',
+        'footer_title' => 'Private Server <span class="color-orange">Ember</span>',
         'footer_desc' => 'Server emulator completely written in Java and released under the GPLv3.0 license.',
 
         'fnav_t_1' => 'About the server',

@@ -11,7 +11,7 @@ class enabled
 
     private bool $enable_shop = false;
 
-    private bool $enable_balance = false;
+    private bool $enable_balance = true;
 
     private bool $enable_statistic = true;
 

@@ -44,8 +44,8 @@
           <a href="/admin/pages/edit/{{short.id}}" class="btn btn-primary">Change</a>
         </div>
         <div class="card-footer d-flex justify-content-between">
-          <span class="card-text">Для языка: {{short.lang}}</span>
-          <span class="card-text">Тип: {% if short.is_news == 1 %}News{% else %}Page{% endif %}</span>
+          <span class="card-text">For language: {{short.lang}}</span>
+          <span class="card-text">Type: {% if short.is_news == 1 %}News{% else %}Page{% endif %}</span>
           <span class="card-text">{{short.date_create|date("F d, Y")}}</span>
         </div>
 

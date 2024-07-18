@@ -9,13 +9,13 @@ class enabled
 
     private bool $enable_news = true;
 
-    private bool $enable_shop = true;
+    private bool $enable_shop = false;
 
-    private bool $enable_balance = true;
+    private bool $enable_balance = false;
 
     private bool $enable_statistic = true;
 
-    private bool $enable_referral = true;
+    private bool $enable_referral = false;
 
     private bool $enable_ticket = true;
 

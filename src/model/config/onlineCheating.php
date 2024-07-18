@@ -9,9 +9,9 @@ class onlineCheating
 
     private bool $enabled = true;
 
-    private int $minOnlineShow = 0;
+    private int $minOnlineShow = 50;
 
-    private int $maxOnlineShow = 0;
+    private int $maxOnlineShow = 2000;
 
     private array $cheatingDetails = [];
 

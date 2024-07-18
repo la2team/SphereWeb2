@@ -953,9 +953,9 @@ Email: %%email%l%
 ====== ACCOUNT =======
 Login: %%login%%
 Password: %%password%%',
-	'top_online' => 'TOP - Online',
-	'top_pk' => 'TOP - PK',
-	'top_pvp' => 'TOP - PvP',
+	'top_online' => 'TOP Online',
+	'top_pk' => 'TOP PK',
+	'top_pvp' => 'TOP PvP',
 	'topic' => 'Topic',
 	'topics' => 'Topics',
 	'topup_master_acc_bal' => 'Top up master account balance',

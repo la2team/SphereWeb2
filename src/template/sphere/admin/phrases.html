@@ -11,7 +11,7 @@
             <div class="card custom-card">
                 <div class="card-header justify-content-between">
                     <div class="card-title">
-                        Языки
+                        Languages
                     </div>
                 </div>
 
@@ -37,11 +37,11 @@
             <div class="card custom-card">
                 <div class="card-header">
                     <div class="">
-                        <button id="add_new_phrase" class="btn btn-sm btn-primary-light">Добавить фразу</button>
+                        <button id="add_new_phrase" class="btn btn-sm btn-primary-light">Add phrase</button>
                     </div>
 
                     <div class="">
-                        <button id="save_phrases" class="btn btn-sm btn-primary-light">Сохранить таблицу</button>
+                        <button id="save_phrases" class="btn btn-sm btn-primary-light">Save table</button>
                     </div>
                 </div>
                 <div class="card-body">
@@ -52,7 +52,7 @@
 
                             <tr>
                                 <th data-save="false" style="width: 1px;"></th>
-                                <th data-save="false">Ключ</th>
+                                <th data-save="false">Key</th>
                                 {% for lang in all_phrase().lang_list %}
                                 <th data-save="true">{{lang|upper}}</th>
                                 {% endfor %}

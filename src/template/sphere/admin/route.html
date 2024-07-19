@@ -10,7 +10,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <form action="/admin/route/edit" method="post" class="modal-content">
         <div class="modal-header">
-          <h6 class="modal-title" id="edit_staticBackdropLabel">Изменить маршрутизатор
+          <h6 class="modal-title" id="edit_staticBackdropLabel">Change router
           </h6>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -93,7 +93,7 @@
         <input type="hidden" value="" id="edit_objectId" name="objectId">
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-          <button type="submit" data-bs-dismiss="modal" class="btn btn-success">Сохранить</button>
+          <button type="submit" data-bs-dismiss="modal" class="btn btn-success">Save</button>
         </div>
       </form>
     </div>
@@ -104,12 +104,12 @@
       <div class="card custom-card">
         <div class="card-header justify-content-between">
           <div class="card-title">
-            Маршрутизаторы
+            Routers
           </div>
           <div class="d-flex">
             <button data-bs-toggle="modal" data-bs-target="#modal-new-address"
                     class="btn btn-sm btn-primary btn-wave waves-light"><i
-              class="ri-add-line fw-semibold align-middle me-1"></i> Создать маршрутизатор
+              class="ri-add-line fw-semibold align-middle me-1"></i> Create a router
             </button>
 
             <div class="modal fade" id="modal-new-address" tabindex="-1" aria-labelledby="modal-new-address"
@@ -117,7 +117,7 @@
               <div class="modal-dialog modal-lg modal-dialog-centered">
                 <form action="/admin/route/add" method="post" class="modal-content">
                   <div class="modal-header">
-                    <h6 class="modal-title" id="staticBackdropLabel">Новый маршрутизатор
+                    <h6 class="modal-title" id="staticBackdropLabel">New router
                     </h6>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
@@ -205,7 +205,7 @@
                   <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close
                     </button>
-                    <button type="submit" class="btn btn-success">Добавить</button>
+                    <button type="submit" class="btn btn-success">Add</button>
                   </div>
                 </form>
               </div>
@@ -310,14 +310,14 @@
     $('#routeTable').DataTable({
       responsive: true,
       language: {
-        searchPlaceholder: 'Поиск...',
+        searchPlaceholder: 'Search...',
         sSearch: '',
-        lengthMenu: 'Показать _MENU_ записей',
+        lengthMenu: 'Показать _MENU_ records',
         paginate: {
-          first: 'Первая',
-          last: 'Последняя',
-          next: 'Следующая',
-          previous: 'Предыдущая',
+          first: 'First',
+          last: 'Last',
+          next: 'Next',
+          previous: 'Previous',
         },
       },
       'lengthMenu': [[50, 100, 200, 500, 1000], [50, 100, 200, 500, 1000]],

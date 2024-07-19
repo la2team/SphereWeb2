@@ -21,7 +21,7 @@
                         {% endif %}
                     </div>
                 </div>
-                <div class="server__progress" data-gw-server-online="{{ server.getStatus().getOnline() }}" data-gw-server-online-max="{{ server.getMaxOnline() }}">
+                <div class="server__progress" data-gw-server-online="{{ server.getStatus().getOnline() }}">
                     <div class="server__load" data-server-load="" 
                          style="width: {% if server.getStatus().getGameServer() %}100%{% else %}0%{% endif %};"></div>
                 </div>

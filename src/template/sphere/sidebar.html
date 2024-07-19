@@ -148,21 +148,16 @@
             <div class="d-flex align-items-center justify-content-center flex-wrap">
               <div class="row pt-2 pb-1 ">
 
-                <div class="col-6 border-end">
+                <div class="fs-14 fw-semibold mb-2">
                   {% if server.getStatus().getGameServer() %}
-                  <div class="fs-3 fw-semibold text-success">ON</div>
+                  <div class="fs-3 fw-semibold text-success">ONLINE</div>
                   {% else %}
                   <div class="fs-3 fw-semibold text-danger">OFF</div>
                   {% endif %}
                   <div class="fs-sm fw-semibold text-uppercase text-muted">{{phrase('status')}}</div>
-                </div>
+                </div> 
 
-                <div class="col-6">
-                  <div class="fs-3 fw-semibold">{{ server.getStatus().getOnline() }}</div>
-                  <div class="fs-sm fw-semibold text-uppercase text-muted">Online</div>
-                </div>
-
-                <div class="fw-semibold text-start text-center">
+                <div class="fw-semibold text-start text-center">Game Server: 
                   {{server.getName()}}
                 </div>
               </div>

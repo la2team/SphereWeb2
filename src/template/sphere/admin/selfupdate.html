@@ -57,6 +57,7 @@
     $('#startUpdate').on('click', function (e) {
         e.preventDefault();
         $(this).attr('disabled', 'disabled');
+        checkProgress();
 
         $.ajax({
             url: '/github/update',
@@ -65,7 +66,6 @@
                 if(response.ok){
                     $("#messagedata").text("Обновление не требуется")
                 }
-                checkProgress();
             }
         });
 

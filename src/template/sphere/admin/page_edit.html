@@ -19,7 +19,7 @@
     <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
       <div class="card custom-card">
         <div class="card-header">
-          <div class="card-title">Изменение страницы</div>
+          <div class="card-title">Changing the page</div>
         </div>
         <div class="card-body">
           <div class="gy-3">
@@ -27,26 +27,26 @@
             <input type="hidden" id="id" name="id" value="{{page.id}}">
 
             <div class="col-xl-12">
-              <label for="type" class="form-label">Тип страницы</label>
+              <label for="type" class="form-label">Page Type</label>
               <select class="form-control" data-trigger name="type" id="type">
-                <option {% if page.is_news == 1 %}selected{% endif %} value="news">Новость</option>
-                <option {% if page.is_news == 0 %}selected{% endif %} value="page">Страница</option>
+                <option {% if page.is_news == 1 %}selected{% endif %} value="news">News</option>
+                <option {% if page.is_news == 0 %}selected{% endif %} value="page">Page</option>
               </select>
             </div>
 
             <div class="col-xl-12">
-              <label for="title" class="form-label">Название</label>
+              <label for="title" class="form-label">Name</label>
               <input value="{{page.name}}" type="text" class="form-control" id="title" placeholder="title">
             </div>
 
             <div class="col-xl-12">
-              <label for="link" class="form-label">Ссылка</label>
+              <label for="link" class="form-label">Link</label>
               <input value="{{page.link}}" type="text" class="form-control" id="link" placeholder="link">
             </div>
 
             <div class="col-xl-6">
-              <label for="lang" class="form-label">Язык новости (новость будет выводится для пользователей выбранного
-                языка)</label>
+              <label for="lang" class="form-label">News language (the news will be displayed for users of the selected
+language)</label>
               <select class="form-control" data-trigger name="lang" id="lang">
                 {% for lang in config().lang().getLangList() %}
                 <option {% if page.lang == lang.getLang() %}selected{% endif %} value="{{lang.getLang()}}">{{lang.getName()}}</option>
@@ -54,7 +54,7 @@
               </select>
             </div>
             <div class="col-xl-12 ">
-              <label class="form-label">Изображение новости</label>
+              <label class="form-label">News image</label>
 
               <div class="mb-4 d-sm-flex align-items-center">
                 <div class="mb-0 me-5">
@@ -79,7 +79,7 @@
             </div>
 
             <div class="col-xl-12">
-              <label class="form-label">Содержимое новости</label>
+              <label class="form-label">News content</label>
               <div id="content">{{page.description|raw}} </div>
             </div>
 
@@ -88,8 +88,8 @@
         </div>
         <div class="card-footer">
           <div class="btn-list text-end">
-              <button id="remove" type="button" class="btn btn-danger">Удалить</button>
-              <button id="saveEdit" type="button" class="btn btn-success">Сохранить</button>
+              <button id="remove" type="button" class="btn btn-danger">Delete</button>
+              <button id="saveEdit" type="button" class="btn btn-success">Save</button>
             </div>
 
         </div>

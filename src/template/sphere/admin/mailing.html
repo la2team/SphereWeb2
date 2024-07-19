@@ -10,7 +10,7 @@
       <div class="card custom-card">
         <div class="card-header">
           <div class="card-title">
-            Содержание писем
+            Contents of letters
           </div>
         </div>
         <div class="card-body d-flex align-items-start">
@@ -20,12 +20,12 @@
                 <button class="nav-link text-start active" id="notice-registration-tab" data-bs-toggle="pill"
                         data-bs-target="#notice-registration" type="button" role="tab"
                         aria-controls="notice-registration" aria-selected="false" tabindex="-1"><i
-                  class="ri-u-disk-line me-1 align-middle d-inline-block"></i>Уведомление о регистрации
+                  class="ri-u-disk-line me-1 align-middle d-inline-block"></i>Registration Notice
                 </button>
                 <button class="nav-link text-start " id="forget-password-tab" data-bs-toggle="pill"
                         data-bs-target="#forget-password" type="button" role="tab" aria-controls="forget-password"
-                        aria-selected="true"><i class="ri-group-line me-1 align-middle d-inline-block"></i>Восстановление
-                  пароля
+                        aria-selected="true"><i class="ri-group-line me-1 align-middle d-inline-block"></i>Recovery
+password
                 </button>
 
               </div>
@@ -37,11 +37,11 @@
                   <div class="form-check form-switch mb-2">
                     <input value="{{get_email_template()['notice_reg_subject']}}" class="form-check-input" type="checkbox" role="switch"
                            id="switch-primary" checked="">
-                    <label class="form-check-label" for="switch-primary">Отправка на почту оповещение о
-                      регистрации</label>
+                    <label class="form-check-label" for="switch-primary">Sending an email notification about
+                      registration</label>
                   </div>
 
-                  Это письмо будет отправлено при регистрации пользователю, в виде уведомления о регистрации.
+This letter will be sent upon registration to the user, in the form of a registration notification.
 
                   <div class="form-floating">
                     <input value="Вы успешно зарегистрировались" type="text" class="form-control"
@@ -53,7 +53,7 @@
                 </div>
                 <div class="tab-pane" id="forget-password" role="tabpanel" aria-labelledby="forget-password-tab"
                      tabindex="0">
-                  Это письмо будет отправлено при сбросе пароля пользователю.
+This email will be sent when the user's password is reset.
                   <div class="form-floating">
                     <input value="{{get_email_template()['forget_reg_subject']}}" type="text" class="form-control" id="forget_reg_subject"
                            placeholder="Восстановление пароля">
@@ -65,7 +65,7 @@
               </div>
             </div>
             <div class="border-top border-block-start-dashed d-flex justify-content-end mt-3 pt-2">
-              <span id="saveEmailTemplate" class="btn btn-success-light m-1 btn-sm">Сохранить<i
+              <span id="saveEmailTemplate" class="btn btn-success-light m-1 btn-sm">Save<i
                 class="bi bi-sd-card ms-2"></i></span>
             </div>
           </div>

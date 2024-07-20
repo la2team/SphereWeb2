@@ -13,55 +13,55 @@
           <ul class="nav nav-tabs nav-tabs-header mb-0 d-sm-flex d-block" role="tablist">
             <li class="nav-item m-1">
               <a class="nav-link active" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#langSystem" aria-selected="true">Language</a>
+                 href="#langSystem" aria-selected="true">{{ phrase('lang') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#donateSystem" aria-selected="true">Donation</a>
+                 href="#donateSystem" aria-selected="true">{{ phrase('menu_donate') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#referralSystem" aria-selected="true">Referral</a>
+                 href="#referralSystem" aria-selected="true">{{ phrase(306) }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#functionsdata" aria-selected="true">Functions</a>
+                 href="#functionsdata" aria-selected="true">{{ phrase('functions') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#captchaSystem" aria-selected="true">Captcha</a>
+                 href="#captchaSystem" aria-selected="true">{{ phrase('captcha') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#onlineCheating" aria-selected="true">Cheat</a>
+                 href="#onlineCheating" aria-selected="true">{{ phrase('boosting') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#registration" aria-selected="true">Registration</a>
+                 href="#registration" aria-selected="true">{{ phrase('menu_registration') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#email" aria-selected="true">Post office</a>
+                 href="#email" aria-selected="true">{{ phrase('email') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#cache" aria-selected="true">Cache</a>
+                 href="#cache" aria-selected="true">{{ phrase(320) }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#other" aria-selected="true">Miscellaneous</a>
+                 href="#other" aria-selected="true">{{ phrase(568) }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#template" aria-selected="true">Template</a>
+                 href="#template" aria-selected="true">{{ phrase('template') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#logoImg" aria-selected="true">Logo</a>
+                 href="#logoImg" aria-selected="true">{{ phrase('logo') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#palette" aria-selected="true">Palette</a>
+                 href="#palette" aria-selected="true">{{ phrase('palette') }}</a>
             </li>
           </ul>
         </div>
@@ -74,7 +74,7 @@
                 <div id="langSettings" class="row mb-1">
 
                   <div class="col-xl-6">
-                    <label class="form-label">Used languages:</label>
+                    <label class="form-label">{{ phrase('used_languages') }} :</label>
 
                     {% for lang in getLangList() %}
                     <div class="form-check">
@@ -89,7 +89,7 @@
                   </div>
 
                   <div class="col-xl-6">
-                    <label class="form-label">Default site language:</label>
+                    <label class="form-label">{{ phrase('default_site_language') }} :</label>
                     <select class="form-control" data-trigger name="default" id="langDefault">
                       {% for lang in getLangList() %}
                       <option {% if lang.lang== config().lang().getDefault() %}selected{% endif %}
@@ -116,9 +116,8 @@
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Default payment system</p>
-                          <p class="fs-12 text-muted mb-0">Payment system will selected default for
-users</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('default_payment_system') }}</p>
+                          <p class="fs-12 text-muted mb-0">{{ phrase('default_payment_system_for_users') }}</p>
                         </div>
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
                           <select class="form-control" data-trigger="" name="paySystemDefault" id="paySystemDefault">
@@ -134,18 +133,17 @@ users</p>
                       <hr>
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Donation range</p>
-                          <p class="fs-12 text-muted mb-0">Specify min. and max. number that the user is allowed
-enter for donations</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('donation_range') }}</p>
+                          <p class="fs-12 text-muted mb-0">{{ phrase('donation_min_max') }}</p>
                         </div>
 
                         <div class="col-xl-3">
-                          <label for="first-name" class="form-label">I am. amount</label>
+                          <label for="minSummaPaySphereCoin" class="form-label">{{ phrase('min_amount') }}</label>
                           <input value="{{config().donate().getMinSummaPaySphereCoin()}}" type="number"
                                  class="form-control" id="minSummaPaySphereCoin" placeholder="1">
                         </div>
                         <div class="col-xl-3">
-                          <label for="last-name" class="form-label">Max. sum</label>
+                          <label for="maxSummaPaySphereCoin" class="form-label">{{ phrase('max_amount') }}</label>
                           <input value="{{config().donate().getMaxSummaPaySphereCoin()}}" type="number"
                                  class="form-control" id="maxSummaPaySphereCoin" placeholder="999999">
                         </div>
@@ -155,9 +153,8 @@ enter for donations</p>
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Cost of 1 SphereCoin in relation to 1 dollar</p>
-                          <p class="fs-12 text-muted mb-0">Specify how much SphereCoin user will receive for 1
-dollars</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('donate_coin_to_dollar') }}</p>
+                          <p class="fs-12 text-muted mb-0">{{ phrase('donate_coin_per_dollar') }}</p>
                         </div>
 
                         <div class="col-xl-3">
@@ -170,7 +167,7 @@ dollars</p>
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Currency ratio</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('currency_ratio') }}</p>
                         </div>
                         <div class="col-xl-2">
                           <label for="ratioUSD" class="form-label">USD</label>
@@ -198,12 +195,9 @@ dollars</p>
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Enable cumulative discount system ?</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('enable_cumulative_discount_system') }}</p>
                           <p class="fs-12 text-muted mb-0">
-                            Cumulative discount system gives an additional bonus to the user’s replenishment amount
-based on the total amount of replenishment to the user’s account for the entire time.
-For example: If the amount is set to 100 and the percentage is 10, and the user has donated for the entire time
-100 SphereCoin, then we give him 10% extra, so he gets 100 + 10.
+                            {{ phrase('cumulative_discount_description') }}
                           </p>
                         </div>
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
@@ -222,8 +216,8 @@ For example: If the amount is set to 100 and the percentage is 10, and the user 
                                 <table class="table text-nowrap table-bordered" id="table_CumulativeDiscountSystem">
                                   <thead>
                                   <tr>
-                                    <th data-name="coin" scope="col">Qty SphereCoin</th>
-                                    <th data-name="percent" scope="col">Percentage bonus</th>
+                                    <th data-name="coin" scope="col">{{ phrase('amount_of_donate_coin') }}</th>
+                                    <th data-name="percent" scope="col">{{ phrase('bonus_percentage') }}</th>
                                     <th scope="col"></th>
                                   </tr>
                                   </thead>
@@ -247,7 +241,7 @@ For example: If the amount is set to 100 and the percentage is 10, and the user 
                                   </tbody>
                                 </table>
                                 <button id="AddNewCumulativeDiscountSystem" type="button"
-                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">Add
+                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">{{ phrase(438) }}
                                 </button>
                               </div>
 
@@ -261,11 +255,9 @@ For example: If the amount is set to 100 and the percentage is 10, and the user 
                       <hr>
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Turn on one-time bonus ?</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('enable_one_time_bonus') }}</p>
                           <p class="fs-12 text-muted mb-0">
-                            A one-time bonus is a bonus percentage of the number of replenished SphereCoins.
-If we set 5% for replenishment of 100 SphereCoin, then the user will receive a bonus
-additionally 5 SphereCoins.
+                            {{ phrase('one_time_bonus_description') }}
                           </p>
                         </div>
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
@@ -283,8 +275,8 @@ additionally 5 SphereCoins.
                                 <table class="table text-nowrap table-bordered">
                                   <thead>
                                   <tr>
-                                    <th data-name="coin" scope="col">Qty SphereCoin</th>
-                                    <th data-name="percent" scope="col">Percentage bonus</th>
+                                    <th data-name="coin" scope="col">{{ phrase('amount_of_donate_coin') }}</th>
+                                    <th data-name="percent" scope="col">{{ phrase('bonus_percentage') }}</th>
                                     <th scope="col"></th>
                                   </tr>
                                   </thead>
@@ -306,7 +298,7 @@ additionally 5 SphereCoins.
                                   </tbody>
                                 </table>
                                 <button id="AddNewEnableOneTimeBonus" type="button"
-                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">Add
+                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">{{ phrase(438) }}
                                 </button>
                               </div>
 
@@ -322,13 +314,9 @@ additionally 5 SphereCoins.
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Turn on system of discounts on the purchase of items?</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('enable_item_purchase_discounts') }}</p>
                           <p class="fs-12 text-muted mb-0">
-                            A discount is provided for purchasing goods in the Store, the discount is based on the total amount
-user donations for all time.
-For example: If the user donated N SphereCoin for the entire time, then in the store when
-the purchase will be given an X% discount.
-
+                            {{ phrase('item_purchase_discount_description') }}
                           </p>
                         </div>
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
@@ -348,8 +336,8 @@ the purchase will be given an X% discount.
                                        id="table_SystemDiscountsOnItemPurchases">
                                   <thead>
                                   <tr>
-                                    <th data-name="coin" scope="col">Qty SphereCoin</th>
-                                    <th data-name="percent" scope="col">Percentage bonus</th>
+                                    <th data-name="coin" scope="col">{{ phrase('amount_of_donate_coin') }}</th>
+                                    <th data-name="percent" scope="col">{{ phrase('bonus_percentage') }}</th>
                                     <th scope="col"></th>
                                   </tr>
                                   </thead>
@@ -372,7 +360,7 @@ the purchase will be given an X% discount.
                                   </tbody>
                                 </table>
                                 <button id="AddNewSystemDiscountsOnItemPurchases" type="button"
-                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">Add
+                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">{{ phrase(438) }}
                                 </button>
                               </div>
 
@@ -388,12 +376,9 @@ the purchase will be given an X% discount.
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Include one-time discounts on the purchase of items by quantity</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('enable_quantity_discounts') }}</p>
                           <p class="fs-12 text-muted mb-0">
-                            A discount is provided for purchasing goods in the Store, the discount is based on the total amount
-user donations for all time.
-For example: If the user donated N SphereCoin for the entire time, then in the store when
-the purchase will be given an X% discount.
+                            {{ phrase('donation_based_discount') }}
                           </p>
                         </div>
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
@@ -414,8 +399,8 @@ the purchase will be given an X% discount.
                                        id="table_IncludeOneTimeDiscountsOnThePurchaseOfItemsByQuantity">
                                   <thead>
                                   <tr>
-                                    <th data-name="count" scope="col">Qty SphereCoin</th>
-                                    <th data-name="percent" scope="col">Percentage bonus</th>
+                                    <th data-name="count" scope="col">{{ phrase('amount_of_donate_coin') }}</th>
+                                    <th data-name="percent" scope="col">{{ phrase('bonus_percentage') }}</th>
                                     <th scope="col"></th>
                                   </tr>
                                   </thead>
@@ -439,22 +424,21 @@ the purchase will be given an X% discount.
                                   </tbody>
                                 </table>
                                 <button id="AddNewIncludeOneTimeDiscountsOnThePurchaseOfItemsByQuantity" type="button"
-                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">Add
+                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">{{ phrase(438) }}
                                 </button>
                               </div>
 
                             </div>
 
-                           List of item IDs that are eligible for discounts. If empty, then for all items
-discount applies.
+                            {{ phrase('discount_item_ids') }}
                             <div class="row">
 
                               <div class="table-responsive">
                                 <table class="table text-nowrap table-bordered" id="table_ListOfItemsForDiscount">
                                   <thead>
                                   <tr>
-                                    <th data-name="count" scope="col">Number of items purchased</th>
-                                    <th data-name="percent" scope="col">Discount percentage</th>
+                                    <th data-name="count" scope="col">{{ phrase('quantity_of_items_purchased') }}</th>
+                                    <th data-name="percent" scope="col">{{ phrase('discount_percentage') }}</th>
                                     <th scope="col"></th>
                                   </tr>
                                   </thead>
@@ -477,7 +461,7 @@ discount applies.
                                   </tbody>
                                 </table>
                                 <button id="AddNewListOfItemsForDiscount" type="button"
-                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">Add
+                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">{{ phrase(438) }}
                                 </button>
                               </div>
                             </div>
@@ -497,12 +481,12 @@ discount applies.
 
                   <div class="card custom-card shadow-none mb-4 border">
                     <div class="card-header">
-                      <div class="card-title">Translation in the game</div>
+                      <div class="card-title">{{ phrase('transfer_to_game') }}</div>
                     </div>
                     <div class="card-body row">
 
-                      <label class="form-label op-5 ">These items are sent directly to the player when transferred through the "Transfer to Game" function"</label>
-                      <label class="form-label op-5 ">Specify the number of items the user will receive for 1 Donate Coin.</label>
+                      <label class="form-label op-5 ">{{ phrase('direct_transfer_items') }}</label>
+                      <label class="form-label op-5 ">{{ phrase('items_per_donate_coin') }}</label>
 
                       <div class="col-xxl-4 col-xl-6 ">
                         <div class="input-group">
@@ -535,7 +519,7 @@ discount applies.
                   <div id="bonus_Item_donation"
                        class="card custom-card shadow-none mb-4 border">
                     <div class="card-header justify-content-between d-sm-flex d-block">
-                      <div class="card-title">Reward for donating items
+                      <div class="card-title">{{ phrase('item_donation_reward') }}
                       </div>
                       <div class="mt-sm-0 mt-2">
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
@@ -551,19 +535,16 @@ discount applies.
 
                       <div class="row">
 
-                        <label class="form-label op-5 ">After donation
-user is more than N amount, we give him items in
-warehouse as a bonus. Specify what items you want to Issue
-user and for what range of donations.</label>
+                        <label class="form-label op-5 ">{{ phrase('donation_bonus_items') }}</label>
 
                         <div class="px-4 py-3 border-top border-block-start-dashed d-sm-flex justify-content-end">
                           <div class="col-xl-4">
                             <input id="costItem" type="text"
-                                   class="form-control" placeholder="Price">
+                                   class="form-control" placeholder="{{ phrase(72) }}">
                           </div>
                           <button id="addCostItem"
-                                  class="btn btn-primary-light m-1">Add
-                            tab<i class="bi bi-plus-lg ms-2"></i></button>
+                                  class="btn btn-primary-light m-1">{{ phrase(438) }}
+                            {{ phrase('tab') }}<i class="bi bi-plus-lg ms-2"></i></button>
                         </div>
                       </div>
 
@@ -598,9 +579,9 @@ user and for what range of donations.</label>
                               <thead>
                               <tr>
                                 <th scope="col"></th>
-                                <th scope="col">Subject</th>
-                                <th scope="col">Qty</th>
-                                <th scope="col">Exiled</th>
+                                <th scope="col">{{ phrase(301) }}</th>
+                                <th scope="col">{{ phrase(71) }}</th>
+                                <th scope="col">{{ phrase('enchant') }}</th>
                               </tr>
                               </thead>
                               <tbody>
@@ -656,7 +637,7 @@ user and for what range of donations.</label>
                         </div>
                         <div class="col-xxl-2 col-xl-3 mb-2">
                           <button id="add_insert_to_bonus_donate" type="submit"
-                                  class="btn btn-primary">Add
+                                  class="btn btn-primary">{{ phrase(438) }}
                           </button>
                         </div>
                       </div>
@@ -666,7 +647,7 @@ user and for what range of donations.</label>
                   <div class="card custom-card shadow-none mb-3 border">
                     <div class="card-header">
                       <div class="card-title">
-                        Setting up payment systems
+                        {{ phrase('payment_system_settings') }}
                       </div>
                     </div>
                     <div class="card-body  align-items-start">
@@ -705,9 +686,7 @@ user and for what range of donations.</label>
                                     <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                                       <div>
                                         <p class="fs-14 mb-1 fw-semibold">
-                                         Enable payment
-system
-                                          {{donate.getName()}}</p>
+                                          {{ phrase('enable_payment_system') }} {{donate.getName()}}</p>
                                       </div>
                                       <div class="custom-toggle-switch ms-sm-2 ms-0">
                                         <input id="is_enable_{{donate.getName()}}"
@@ -722,8 +701,7 @@ system
                                     <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                                       <div>
                                         <p class="fs-14 mb-1 fw-semibold">
-                                          Enable for administrator only
-                                          {{donate.getName()}}</p>
+                                          {{ phrase('admin_only_enable') }} {{donate.getName()}}</p>
                                       </div>
                                       <div class="custom-toggle-switch ms-sm-2 ms-0">
                                         <input id="forAdmin_{{donate.getName()}}"
@@ -754,7 +732,7 @@ system
                                         class="form-control"
                                         id="description_{{donate.getName()}}"
                                         placeholder="">
-                                      <label for="description_{{donate.getName()}}">Description of the payment system</label>
+                                      <label for="description_{{donate.getName()}}">{{ phrase('payment_system_description') }}</label>
                                     </div>
 
                                   </div>
@@ -850,14 +828,14 @@ system
                 <li class="list-group-item">
                   <div class="row gy-2 d-sm-flex align-items-center justify-content-between">
                     <div class="col-xl-6">
-                      <span class="fs-14 mb-0">Number of bonus SphereCoins that a player will receive for completing a referral :</span>
+                      <span class="fs-14 mb-0">Кол-во бонусных Donate Coin, которые получит игрок за завершения реферала :</span>
                     </div>
                     <div class="col-xl-2">
                       <div class="form-floating mb-3">
                         <input value="{{config().referral().getBonusAmount()}}" type="number" step="1"
                                class="form-control"
                                id="ref_bonus_amount" placeholder="80">
-                        <label for="ref_bonus_amount">SphereCoin</label>
+                        <label for="ref_bonus_amount">Donate Coin</label>
                       </div>
                     </div>
                   </div>
@@ -880,7 +858,7 @@ system
                 <li class="list-group-item">
                   <div class="row gy-2 d-sm-flex align-items-center justify-content-between">
                     <div class="col-xl-6">
-                      <span class="fs-14 mb-0">Set the reward percentage of the SphereCoin top-up amount?</span>
+                      <span class="fs-14 mb-0">Установите процент вознаграждения от суммы пополнения Donate Coin?</span>
                     </div>
                     <div class="col-xl-2">
                       <div class="form-floating mb-3">
@@ -922,7 +900,7 @@ system
 
                           <div class="form-floating mb-3 ">
                             <button type="button" class="btn btn-success btn-wave waves-effect waves-light"
-                                    id="item_add_to_leader">Add
+                                    id="item_add_to_leader">{{ phrase(438) }}
                             </button>
                           </div>
 
@@ -1011,7 +989,7 @@ system
 
                           <div class="form-floating mb-3 ">
                             <button type="button" class="btn btn-success btn-wave waves-effect waves-light"
-                                    id="item_add_to_slave">Add
+                                    id="item_add_to_slave">{{ phrase(438) }}
                             </button>
                           </div>
 
@@ -1351,7 +1329,7 @@ online.<br>
                       <input id="players_online_cheating" min="1" type="number" class="form-control" placeholder="100">
                     </div>
                     <div class="col-auto">
-                      <button type="button" class="btn btn-info add-accordion-item">Add</button>
+                      <button type="button" class="btn btn-info add-accordion-item">{{ phrase(438) }}</button>
                     </div>
                   </div>
 
@@ -1395,7 +1373,7 @@ At this time, multiply online by:
                         </div>
                         {% endfor %}
                         <div class="col-md-12">
-                          <button type="button" class="btn btn-primary add-time">Add time</button>
+                          <button type="button" class="btn btn-primary add-time">{{ phrase(438) }} время</button>
                         </div>
                       </div>
                     </div>
@@ -2263,7 +2241,7 @@ Image of the page icon (favicon). The icon is displayed in page tabs.
           formData[key] = attr.value;
         }
       });
-      //добавить в formData style
+      //{{ phrase(438) }} в formData style
       var style = $('html').attr('style');
       if (style) {
         formData['style'] = style;
@@ -2716,7 +2694,7 @@ At this time online multiply online by:
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-primary add-time">Add time</button>
+                    <button type="button" class="btn btn-primary add-time">{{ phrase(438) }} время</button>
                 </div>
             </div>
         </div>`;

@@ -307,7 +307,7 @@
         totalCost += totalPrice;  // Добавляем к общей стоимости
       });
       $('.shopCostBuy').text(totalCost);
-      $cardBody.find('.showSelectBuy').text('Купить за ' + totalCost.toFixed(0));  // Обновляем текст кнопки покупки в текущей карточке
+      $cardBody.find('.showSelectBuy').text('Buy for' + totalCost.toFixed(0));  // Обновляем текст кнопки покупки в текущей карточке
     }
 
     $('body').on('input change', '.quantity', function () {

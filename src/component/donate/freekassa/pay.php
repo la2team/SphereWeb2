@@ -52,15 +52,15 @@ class freekassa extends \Ofey\Logan22\model\donate\pay_abstract {
         if(empty(self::getConfigValue('secret_key_1')) OR empty(self::getConfigValue('secret_key_2'))){
             board::error("Freekassa token is empty");
         }
-        filter_input(INPUT_POST, 'count', FILTER_VALIDATE_INT) ?: board::notice(false, "Введите сумму цифрой");
+        filter_input(INPUT_POST, 'count', FILTER_VALIDATE_INT) ?: board::notice(false, "Enter the amount in numbers");
 
         $donate = \Ofey\Logan22\controller\config\config::load()->donate();
 
         if ($_POST['count'] < $donate->getMinSummaPaySphereCoin()) {
-            board::notice(false, "Минимальное пополнение: " . $donate->getMinSummaPaySphereCoin());
+            board::notice(false, "Minimum replenishment: " . $donate->getMinSummaPaySphereCoin());
         }
         if ($_POST['count'] > $donate->getMaxSummaPaySphereCoin()) {
-            board::notice(false, "Максимальная пополнение: " . $donate->getMaxSummaPaySphereCoin());
+            board::notice(false, "Maximum replenishment: " . $donate->getMaxSummaPaySphereCoin());
         }
 
         $order_amount = $_POST['count'] * ($donate->getRatioRUB() / $donate->getSphereCoinCost());
@@ -102,7 +102,7 @@ class freekassa extends \Ofey\Logan22\model\donate\pay_abstract {
         $amount = donate::currency($_REQUEST['AMOUNT'], $_POST['currency']);
 
         \Ofey\Logan22\model\admin\userlog::add("user_donate", 545, [$_POST['sum'], $_POST['currency'], get_called_class()]);
-        user::getUserId($user_id)->donateAdd($amount)->AddHistoryDonate($amount, "Пожертвование Freekassa", get_called_class());
+        user::getUserId($user_id)->donateAdd($amount)->AddHistoryDonate($amount, "Donation Freekassa", get_called_class());
         donate::addUserBonus($user_id, $amount);
 
         echo 'YES';

@@ -767,7 +767,7 @@ return [
 	'donate_coin_per_dollar' => 'Specify how many Donate Coins the user will receive for 1 dollar',
 	'donate_coin_per_ref_donation' => '%d% Donate Coin for each donation from referred player',
 	'donate_coin_to_dollar' => 'The cost of 1 Donate Coin in relation to 1 dollar',
-	'donate_coin_to_game' => 'Game <i class=\'fe fe-dollar-sign fs-16 me-1 text-danger\'></i> Balance Top-Up',
+	'donate_coin_to_game' => 'Transfer to the game',
 	'donate_percent_referral' => 'The userModel received %s for donating referral %s (%s)',
 	'donation_based_discount' => 'A discount on item purchases in the Store is provided based on the total amount of donations by the user over time. For example, if the user has donated N Donate Coins in total, then a discount of X%% will be given in the store for purchases.',
 	'donation_bonus' => 'Donation bonus',

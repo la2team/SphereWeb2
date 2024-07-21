@@ -763,7 +763,7 @@ return [
 	'discount_percentage' => 'Discount percentage',
 	'do_not_update' => 'Do not update',
 	'do_you_want_to_receive' => 'do you want to receive?',
-	'donate_coin' => 'Donate Coin',
+	'donate_coin' => 'Coin of Luck',
 	'donate_coin_per_dollar' => 'Specify how many Donate Coins the user will receive for 1 dollar',
 	'donate_coin_per_ref_donation' => '%d% Donate Coin for each donation from referred player',
 	'donate_coin_to_dollar' => 'The cost of 1 Donate Coin in relation to 1 dollar',

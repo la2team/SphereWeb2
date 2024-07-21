@@ -45,7 +45,7 @@ class inventory
         //            board::error("Данный аккаунт не содержит данного персонажа");
         //        }
 
-        //Все проверки пройдены успешно
+        //All checks passed successfully
         $json = server::send(type::INVENTORY_TO_GAME, [
           'items'   => $arrObjectItems,
           'player'  => $player,
@@ -65,7 +65,7 @@ class inventory
               "type"       => "notice",
               "ok"         => true,
               'sphereCoin' => user::self()->getDonate(),
-              "message"    => "Передано игроку " . $player,
+              "message"    => "Transferred to player " . $player,
             ]);
 
         }
@@ -117,7 +117,7 @@ class inventory
           'enchant'  => 0,
         ];
 
-        //Все проверки пройдены успешно
+        //All checks passed successfully
         $json = server::send(type::INVENTORY_TO_GAME, [
           'items'   => $items,
           'player'  => $_POST['player'],
@@ -129,7 +129,7 @@ class inventory
             board::alert([
               "type"       => "notice",
               "ok"         => true,
-              "message"    => "Передано игроку " . $player,
+              "message"    => "Transferred to player " . $player,
               'sphereCoin' => user::self()->getDonate(),
             ]);
         }

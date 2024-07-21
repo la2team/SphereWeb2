@@ -57,8 +57,8 @@ class freekassa extends \Ofey\Logan22\model\donate\pay_abstract {
         $donate = \Ofey\Logan22\controller\config\config::load()->donate();
 
         if ($_POST['count'] < $donate->getMinSummaPaySphereCoin()) {
-            board::notice(false, "Минимальное пополнение: " . $donate->getMinSummaPaySphereCoin());
-        }
+            board::notice(false, phrase('min_topup') . $donate->getMinSummaPaySphereCoin());
+        }        
         if ($_POST['count'] > $donate->getMaxSummaPaySphereCoin()) {
             board::notice(false, "Максимальная пополнение: " . $donate->getMaxSummaPaySphereCoin());
         }

@@ -17519,7 +17519,6 @@ code[class*=language-] {
     width: 100%;
   }
   .main-chart-wrapper .main-chat-area {
-    display: none;
     min-width: 100%;
     max-width: 100%;
   }

@@ -5,6 +5,7 @@ namespace Ofey\Logan22\component\sphere;
 use Ofey\Logan22\component\alert\board;
 use Ofey\Logan22\component\fileSys\fileSys;
 use Ofey\Logan22\component\time\time;
+use Ofey\Logan22\controller\config\config;
 use Ofey\Logan22\model\db\sql;
 use Ofey\Logan22\model\user\userModel;
 use Ofey\Logan22\template\tpl;
@@ -30,6 +31,13 @@ class server
     private static bool $tokenDisable = false;
 
     private static ?int $server_id = null;
+
+    private static null|int|string $codeError = null;
+
+    public static function getCodeError(): int|string|null
+    {
+        return self::$codeError;
+    }
 
     /**
      * Указываем аргументом которые отправятся запросом массив, для того чтоб указывать дополнительные данные, типо ID пользователя и т.д.
@@ -67,6 +75,12 @@ class server
         return (bool)filter_var($domain, FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME);
     }
 
+    private static $installLink = null;
+
+    public static function setInstallLink(string $link): void {
+        self::$installLink = $link;
+    }
+
     static public function send(type $type, array $arr = []): self
     {
         self::isOffline();
@@ -80,8 +94,14 @@ class server
         }
         self::$error = false;
 
+        if(self::$installLink != null) {
+          $link = self::$installLink;
+        }else{
+            $link = config::load()->sphereApi()->getIp() . ':' . config::load()->sphereApi()->getPort();
+        }
+
         $json        = json_encode($arr) ?? "";
-        $url         = type::url($type) ?? board::error("Не указан URL запроса");
+        $url         = $link . type::url($type) ?? board::error("Не указан URL запроса");
         $ch          = curl_init();
         $headers     = [
           'Content-Type: application/json', // Изменяем тип контента на application/json
@@ -121,6 +141,7 @@ class server
         curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
         $response = curl_exec($ch);
         if($response === false){
+             self::$codeError = "sphereapi_unavailable";
              self::$error = 'Ошибка соединения с Sphere API. Попробуйте еще раз. Возможно сервер на перезагрузке либо указаны неверные данные подключения к Sphere API. Если ошибка повторится, обратитесь в службу поддержки.';
              self::$isOfflineServer = true;
              return $instance;
@@ -145,6 +166,9 @@ class server
 
         if (isset($response['error'])) {
             self::$error = $response['error'];
+            if(isset($response['code'])){
+                self::$codeError = $response['code'];
+            }
             if (self::$showError or ! empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower(
                                                                                     $_SERVER['HTTP_X_REQUESTED_WITH']
                                                                                   ) == 'xmlhttprequest') {
@@ -178,7 +202,7 @@ class server
         return self::$isOfflineServer = false;
     }
 
-    private static function getToken(): string
+    public static function getToken(): string
     {
         if (self::$tokenDisable) {
             return "disable";

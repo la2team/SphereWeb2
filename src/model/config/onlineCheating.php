@@ -134,7 +134,7 @@ class onlineCheating
     }
 
     /**
-     * Включен ли увеличение онлайна
+     * Is online zoom included?
      *
      * @return bool
      */
@@ -144,7 +144,7 @@ class onlineCheating
     }
 
     /**
-     * Минимальный диапазон онлайна, который будет выводиться
+* Minimum online range that will be displayed
      *
      * @return int
      */
@@ -154,7 +154,7 @@ class onlineCheating
     }
 
     /**
-     * Максимальный диапазон онлайна, который будет выводиться
+*Maximum online range that will be displayed
      *
      * @return int
      */
@@ -164,9 +164,9 @@ class onlineCheating
     }
 
     /**
-     * Массив, где ключ кол-во онлайн, значение массив, где время и множитель
+* Array, where the key is the number of online, the value is an array, where is the time and multiplier
      *
-     * @return onlineCheatingTimeDetails[] массив, где ключи - целые числа
+     * @return onlineCheatingTimeDetails[] an array where the keys are integers
      */
     public function getCheatingDetails(): array
     {

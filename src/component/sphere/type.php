@@ -2,6 +2,8 @@
 
 namespace Ofey\Logan22\component\sphere;
 
+use Ofey\Logan22\controller\config\config;
+
 enum type
 {
 
@@ -53,11 +55,12 @@ enum type
     case GET_COMMIT_LAST;
     case GET_COMMIT_FILES;
 
+
     static function url(type $type): string
     {
-        $link = "http://167.235.239.166";
 
-        return $link . match ($type) {
+
+        return  match ($type) {
               self::SPHERE_INSTALL => '/api/admin/install',
               self::REGISTRATION => '/api/user/registration',
               self::STATISTIC => '/api/statistic',

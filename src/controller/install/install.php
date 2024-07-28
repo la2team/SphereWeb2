@@ -12,6 +12,8 @@ use Ofey\Logan22\component\sphere\server;
 use Ofey\Logan22\component\sphere\type;
 use Ofey\Logan22\component\time\time;
 use Ofey\Logan22\component\version\version;
+use Ofey\Logan22\controller\config\config;
+use Ofey\Logan22\model\config\sphereApi;
 use Ofey\Logan22\model\user\auth\auth;
 use Ofey\Logan22\template\tpl;
 use PDO;
@@ -256,6 +258,8 @@ class install
         $filenameCheck = substr(bin2hex(random_bytes(10)), 0, (10)) . ".txt";
         $file          = file_put_contents($filenameCheck, "OK");
         if ($file) {
+            $link = new sphereApi();
+            server::setInstallLink( "{$link->getIp()}:{$link->getPort()}");
             server::tokenDisable(true);
             $response = server::send(type::SPHERE_INSTALL, [
               'filename' => $filenameCheck,
@@ -285,7 +289,7 @@ const __TOKEN__ = \"$token\";\n"
               "INSERT INTO `github_updates` (`sha`, `author`, `url`, `message`, `date`, `date_update`) VALUES (?, ?, ?, ?, ?, ?)"
             );
             $query->execute([
-              $lastCommitData['sha'],
+              $lastCommitData['hash'],
               $lastCommitData['author'],
               $lastCommitData['url'],
               $lastCommitData['message'],
@@ -441,7 +445,7 @@ const __TOKEN__ = \"$token\";\n"
             $commit = $commits[0];
 
             return [
-              'sha'     => $commit['sha'],
+              'hash'     => $commit['sha'],
               'author'  => $commit['commit']['author']['name'],
               'url'     => $commit['html_url'],
               'message' => $commit['commit']['message'],

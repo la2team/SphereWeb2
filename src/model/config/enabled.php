@@ -9,15 +9,17 @@ class enabled
 
     private bool $enable_news = true;
 
-    private bool $enable_shop = true;
+    private bool $enable_shop = false;
 
     private bool $enable_balance = true;
 
     private bool $enable_statistic = true;
 
-    private bool $enable_referral = true;
+    private bool $enable_referral = false;
 
     private bool $enable_ticket = true;
+
+    private bool $enable_send_balance_game = true;
 
     public function __construct()
     {
@@ -30,6 +32,7 @@ class enabled
             $this->enable_statistic = filter_var($setting['enable_statistic'], FILTER_VALIDATE_BOOLEAN);
             $this->enable_referral  = filter_var($setting['enable_referral'], FILTER_VALIDATE_BOOLEAN);
             $this->enable_ticket    = filter_var($setting['enable_ticket'], FILTER_VALIDATE_BOOLEAN);
+            $this->enable_send_balance_game    = filter_var($setting['enable_send_balance_game'], FILTER_VALIDATE_BOOLEAN);
         }
     }
 
@@ -61,6 +64,11 @@ class enabled
     public function isEnableTicket(): bool
     {
         return $this->enable_ticket;
+    }
+
+    public function isEnableSendBalanceGame(): bool
+    {
+        return $this->enable_send_balance_game;
     }
 
 }

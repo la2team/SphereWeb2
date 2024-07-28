@@ -22,23 +22,18 @@
                             <div class="menu__content">{{phrase("nav_about")}}</div>
                         </a>
                     </li>
-                    <li class="menu__el">
-                        <a href="{{alias('registration_user')}}" class="menu__item">
-                            <div class="menu__content">{{phrase("nav_registration")}}</div>
-                        </a>
-                    </li>
-                    <li class="menu__el">
+                                     <li class="menu__el">
                         <a href="javascript:;" data-open-window="files" class="menu__item">
                             <div class="menu__content">{{phrase("nav_files")}}</div>
                         </a>
                     </li>
                     <li class="menu__el">
-                        <a href="/statistic/pvp" class="menu__item">
+                        <a href="/statistic" class="menu__item">
                             <div class="menu__content">{{phrase("nav_statistic")}}</div>
                         </a>
                     </li>
                     <li class="menu__el">
-                        <a href="#" class="menu__item">
+                        <a href="https://discord.gg/S9j2YTuvjw" class="menu__item">
                             <div class="menu__content">{{phrase("nav_forum")}}</div>
                         </a>
                     </li>
@@ -52,12 +47,9 @@
             </div>
 
             <a href="/main" class="navigation__lbtn lbtn">
-                <div class="lbtn__content">- {{phrase("nav_account")}} -</div>
+                <div class="lbtn__content">{{phrase("nav_account")}}</div>
             </a>
 
-            <div class="navigation__language">
-                {% include "lang.html" %}
-            </div>
         </div>
         <!-- END  row -->
     </div>

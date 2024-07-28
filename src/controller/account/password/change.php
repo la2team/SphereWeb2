@@ -35,7 +35,7 @@ class change
         ])->show()->getResponse();
         if (isset($response['success']) && $response['success'] === true) {
             user::self()->addLog(logTypes::LOG_CHANGE_ACCOUNT_PASSWORD, "LOG_CHANGE_ACCOUNT_PASSWORD", [$login]);
-            board::notice(true, "Пароль успешно изменен");
+            board::notice(true, "Password was successfully changed");
         }
     }
 

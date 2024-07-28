@@ -26,6 +26,16 @@ class cryptocloud extends \Ofey\Logan22\model\donate\pay_abstract
     //Enable for administrator only
     protected static bool $forAdmin = false;
 
+    //Валюта по-умолчанию
+    //Default currency
+
+    protected static array $description = [
+      "ru" => "Оплата через крипту",
+      "en" => "Pay crypto",
+    ];
+
+    //Описание
+    //Description
 
     protected string $currency_default = 'USD';
 
@@ -45,9 +55,9 @@ class cryptocloud extends \Ofey\Logan22\model\donate\pay_abstract
     public static function inputs(): array
     {
         return [
-          'apiKey'    => '',
-          'shopId'    => '',
-          'secretKey' => '',
+          'apiKey'    => 'Ключ API',
+          'shopId'    => 'ID магазина',
+          'secretKey' => 'Секретный ключ',
         ];
     }
 

@@ -283,10 +283,6 @@ class client
             'protocol' => [439],
             'name'     => "Age of Magic",
           ],
-          [
-            'protocol' => [447],
-            'name'     => "Shine Maker",
-            ],
         ];
     }
 

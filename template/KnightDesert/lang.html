@@ -1,16 +1,16 @@
 <div class="lang notranslate">
-    {# Display a list of languages. If you pass the argument true (or
-        nothing) to the lang_active() function, then an array of data will be returned, with
-        information about the user's active language. Example of returned
-        given by the lang_active() function 
+    {# Выводим список языков. Если передать аргумент true (или
+        ничего) в функцию lang_active(), тогда вернется массив данных, с
+        информацией о активном языке пользователя. Пример возвращаемых
+        данных функцией lang_active() 
         ["lang"]=> string(2) "en"
         ["name"]=> string(7) "English" 
-        ["isActive"]=> bool(false) 
+        ["isActive"]=> bool(true) 
         ======
-        If the argument is false, it means that we will output
-        array of languages ​​(this is why you need to use a loop), without language
-        which is active for the user. Example of returned data
-        function
+        Если передан аргумент false означает что мы будем выводить
+        массив языков (по этому нужно использовать цикл), без языка
+        который у пользователя активный. Пример возвращаемых данных
+        функцией 
         lang_active(false) array(3) { 
             [1]=> array(3) {
                 ["lang"]=> string(2) "es" 

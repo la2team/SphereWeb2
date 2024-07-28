@@ -17,7 +17,7 @@ class other
 
     private string $allTitlePage = "";
 
-    private float $onlineMul = 5;
+    private float $onlineMul = 0;
 
     private int $timeoutSaveStatistic = 0;
 
@@ -45,7 +45,7 @@ class other
                 'saveStatisticData'    => false,
                 'isAuthShow'           => false,
                 'allTitlePage'         => '',
-                'onlinemul'            => 5.0,
+                'onlinemul'            => 1.0,
                 'timeoutSaveStatistic' => 60,
                 'timezone'             => 'UTC',
                 'messageTechnicalWork' => '',

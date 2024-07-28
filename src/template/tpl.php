@@ -956,14 +956,6 @@ class tpl
             }
         }));
 
-        $twig->addFunction(new TwigFunction('SphereApiError', function () {
-           return \Ofey\Logan22\component\sphere\server::isError();
-        }));
-
-        $twig->addFunction(new TwigFunction('SphereApiCodeError', function () {
-           return \Ofey\Logan22\component\sphere\server::getCodeError();
-        }));
-
         $twig->addFunction(new TwigFunction('statusSphereServer', function () {
             \Ofey\Logan22\component\sphere\server::isOffline();
         }));
@@ -989,7 +981,7 @@ class tpl
             $imagePath     = $uploadsPath . $image;
             $fullImagePath = fileSys::localdir($imagePath);
             if ( ! file_exists(fileSys::getSubDir() . $fullImagePath)) {
-                return fileSys::localdir("/src/template/sphere/assets/images/logo_news_d.jpg");
+                return fileSys::localdir("/src/template/logan22/assets/images/logo_news_d.jpg");
             }
 
             return $fullImagePath;

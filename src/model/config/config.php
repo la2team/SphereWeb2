@@ -42,8 +42,6 @@ class config
 
     private ?palette $palette = null;
 
-    private ?sphereApi $sphereApi = null;
-
     /**
      * Сохранения конфигурации
      */
@@ -235,14 +233,6 @@ class config
             $this->palette = new palette();
         }
         return $this->palette;
-    }
-
-    public function sphereApi(): ?sphereApi
-    {
-        if ($this->sphereApi == null) {
-            $this->sphereApi = new sphereApi();
-        }
-        return $this->sphereApi;
     }
 
 }

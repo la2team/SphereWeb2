@@ -11,19 +11,20 @@
                 <div class="card custom-card">
                     <div class="card-header">
                         <div class="card-title">
-                            {{ phrase(444) }}
+                            Обновление
                         </div>
                     </div>
                     <div class="card-body">
 
                         <div class="">
                             <div class="tab-pane text-muted active show" id="home1" role="tabpanel">
-                                <p class="card-text">{{phrase('experimental_update_function')}}</p>
+                                <p class="card-text">Экспериментальная функция для обновления программного обеспечения SphereWeb.</p>
+                                <p> Рекомендую иметь актуальный код программного обеспечения.</p>
 
                                 <div class="text-success" id="messagedata"></div>
-                                <button id="startUpdate" class="btn btn-success">{{phrase('check_update_software')}}</button>
+                                <button id="startUpdate" class="btn btn-success">Проверить и обновить ПО</button>
                                 <div class="d-none" id="loading">
-                                    {{phrase('please_wait')}}<br>
+                                    Идет обновление. Пожалуйста, подождите...<br>
                                     <span id="progressText" class=""></span>
                                 </div>
 
@@ -56,15 +57,15 @@
     $('#startUpdate').on('click', function (e) {
         e.preventDefault();
         $(this).attr('disabled', 'disabled');
-        checkProgress();
 
         $.ajax({
             url: '/github/update',
             method: 'POST',
             success: function (response) {
                 if(response.ok){
-                    $("#messagedata").text("{{ phrase(463) }}")
+                    $("#messagedata").text("Обновление не требуется")
                 }
+                checkProgress();
             }
         });
 
@@ -85,7 +86,7 @@
                 }
 
                 var progress = response.progress;
-                $('#progressText').text("{{ phrase('progress') }} : " + progress + '%');
+                $('#progressText').text('Прогресс: ' + progress + '%');
 
                 if (progress < 100) {
                     setTimeout(checkProgress, 100);

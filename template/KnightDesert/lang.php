@@ -56,12 +56,12 @@ return [
         'nav_registration' => 'Registration',
         'nav_files' => 'Files',
         'nav_statistic' => 'Statistics',
-        'nav_forum' => 'Community',
+        'nav_forum' => 'Forum',
         'nav_donate' => 'Donations',
-        'nav_account' => 'Control Panel',
+        'nav_account' => 'Account',
         'nav_auth' => 'Authorization',
         'nav_desc' => 'Description',
-        'nav_rules' => 'Rules',
+        'nav_rules' => 'Regulations',
         'nav_help' => 'Help',
         'nav_know' => 'Knowledge base',
 
@@ -84,8 +84,8 @@ return [
 
         'events_title' => 'Upcoming <span class="color-orange">events</span>',
 
-        'footer_title' => 'Private Server <span class="color-orange">Ember</span>',
-        'footer_desc' => 'Server emulator completely written in Java and released under the GPLv3.0 license.',
+        'footer_title' => 'Game server <span class="color-orange">L2</span>',
+        'footer_desc' => 'This server is a test version of the L2 II game and is intended for players’ acquaintance only.',
 
         'fnav_t_1' => 'About the server',
         'fnav_t_2' => 'Account',

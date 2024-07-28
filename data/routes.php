@@ -144,23 +144,24 @@ return array (
   ),
   10 => 
   array (
-    'enable' => true,
+    'enable' => 1,
     'method' => 'GET',
     'pattern' => '/ticket/(\\d+)',
-    'func' => 'controller\\ticket\\ticket::ticketAdmin',
+    'func' => 'controller\\ticket\\ticket::get',
     'access' => 
     array (
       0 => 'admin',
+      1 => 'user',
     ),
     'weight' => 0,
-    'page' => '',
+    'page' => NULL,
     'comment' => 'Ticket read',
   ),
   11 => 
   array (
     'enable' => 1,
     'method' => 'POST',
-    'pattern' => '/ticket/send/message',
+    'pattern' => '/ticket/message',
     'func' => 'controller\\ticket\\ticket::message',
     'access' => 
     array (
@@ -1381,217 +1382,5 @@ return array (
     'weight' => 0,
     'page' => '',
     'comment' => '',
-  ),
-  97 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/admin/pages/create',
-    'func' => 'controller\\admin\\page::create_news',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  98 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/admin/pages/edit',
-    'func' => 'controller\\admin\\page::update_news',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  99 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/admin/pages/trash',
-    'func' => 'controller\\admin\\page::trash_send',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  100 => 
-  array (
-    'enable' => true,
-    'method' => 'GET',
-    'pattern' => '/admin/user/info/(.*)',
-    'func' => 'controller\\admin\\users::getUserInfo',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '/admin/user_profile.html',
-    'comment' => '',
-  ),
-  101 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/admin/user/edit',
-    'func' => 'controller\\admin\\users::edit',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  102 => 
-  array (
-    'enable' => true,
-    'method' => 'GET',
-    'pattern' => '/admin/sphereapi',
-    'func' => 'controller\\sphereapi\\sphereapi::index',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  103 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/admin/sphereapi/save',
-    'func' => 'controller\\sphereapi\\sphereapi::save',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  104 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/admin/sphereapi/check',
-    'func' => 'controller\\sphereapi\\sphereapi::check',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  105 => 
-  array (
-    'enable' => true,
-    'method' => 'GET',
-    'pattern' => '/logan22',
-    'func' => 'component\\plugins\\set_http_referrer\\httpReferrerPlugin::addUserReferer',
-    'access' => 
-    array (
-      0 => 'any',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  106 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/ticket/get/message',
-    'func' => 'controller\\ticket\\ticket::getNewMessage',
-    'access' => 
-    array (
-      0 => 'admin',
-      1 => 'user',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  107 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/ticket/block',
-    'func' => 'controller\\ticket\\ticket::blockTicket',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  108 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/ticket/clear/dialog',
-    'func' => 'controller\\ticket\\ticket::clearDiaglog',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  109 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/ticket/get/last/list',
-    'func' => 'controller\\ticket\\ticket::getUpdateTicketList',
-    'access' => 
-    array (
-      0 => 'admin',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  110 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/ticket/load/file',
-    'func' => 'controller\\ticket\\ticket::fileLoad',
-    'access' => 
-    array (
-      0 => 'admin',
-      1 => 'user',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => '',
-  ),
-  111 => 
-  array (
-    'enable' => true,
-    'method' => 'POST',
-    'pattern' => '/github/update/auto',
-    'func' => 'model\\github\\update::autoRemoteUpdate',
-    'access' => 
-    array (
-      0 => 'any',
-    ),
-    'weight' => 0,
-    'page' => '',
-    'comment' => 'Тестируемая функция автоматического старта обновлений',
   ),
 );

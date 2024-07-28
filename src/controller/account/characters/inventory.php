@@ -45,7 +45,7 @@ class inventory
         //            board::error("Данный аккаунт не содержит данного персонажа");
         //        }
 
-        //All checks passed successfully
+        //Все проверки пройдены успешно
         $json = server::send(type::INVENTORY_TO_GAME, [
           'items'   => $arrObjectItems,
           'player'  => $player,
@@ -65,7 +65,7 @@ class inventory
               "type"       => "notice",
               "ok"         => true,
               'sphereCoin' => user::self()->getDonate(),
-              "message"    => "Transferred to player " . $player,
+              "message"    => "Передано игроку " . $player,
             ]);
 
         }
@@ -77,11 +77,6 @@ class inventory
 
     public static function sendToGame()
     {
-
-        if (!config::load()->enabled()->isEnableSendBalanceGame()) {
-            board::error("Disabled");
-        }
-
         $account = $_POST['account'] ?? board::error("Не передан аккаунт");
         $player  = $_POST['player'] ?? board::error("Не передано имя игрока");
         $coins   = $_POST['coin'] ?? board::error("Не переданы монеты");
@@ -117,7 +112,7 @@ class inventory
           'enchant'  => 0,
         ];
 
-        //All checks passed successfully
+        //Все проверки пройдены успешно
         $json = server::send(type::INVENTORY_TO_GAME, [
           'items'   => $items,
           'player'  => $_POST['player'],
@@ -129,7 +124,7 @@ class inventory
             board::alert([
               "type"       => "notice",
               "ok"         => true,
-              "message"    => "Transferred to player " . $player,
+              "message"    => "Передано игроку " . $player,
               'sphereCoin' => user::self()->getDonate(),
             ]);
         }

@@ -19,13 +19,19 @@ class yoomoney extends \Ofey\Logan22\model\donate\pay_abstract {
     public static function inputs(): array
     {
         return [
-            'shopId' => '',
-            'secretKey' => '',
+            'shopId' => 'Номер кошелька (на который зачисляются деньги)',
+            'secretKey' => 'Секретный ключ',
         ];
     }
 
     private $currency_default = 'RUB';
     private array $allowIP = [];
+
+    // Описание платежки на сайте.
+    protected static array $description = [
+        "ru" => "Yoomoney [Россия, Беларусь, Казахстан]",
+        "en" => "Yoomoney [Russia, Belarus, Kazakhstan]",
+    ];
 
     //Включена/отключена платежная система
     protected static bool $enable = true;

@@ -7,23 +7,6 @@
 
 <div class="container-fluid">
 
-  {% if SphereApiError() %}
-  <div class="col-xl-12">
-    <div class="card custom-card">
-
-      <div class="card-body">
-        <div class="row gy-3">
-          <div class="col-xl-12">
-            <div class="alert alert-danger" role="alert">
-              {{ SphereApiError() }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-
   {# Если нет серверов, то показываем сообщение, что нужно зарегистрировать сервер #}
   {% if getUser().isAdmin() and getServerCount() == 0 %}
   <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -640,7 +623,7 @@
   {% endif %}
 
 
-  {% if forum().isEnabled() and forum().showForumSphereMainPage() %}
+  {% if forum().isEnabled() %}
   <div class="row">
     <div class="col-xxl-12 col-md-12">
       <div class="card">
@@ -942,6 +925,7 @@
   function warehouseSelectItems() {
     var objectIdList = [];
     $('.warehouseInventory:checked').each(function () {
+      // Получаем значение атрибута data-object-id и добавляем его в массив, если чекбокс выбран и значение атрибута существует
       var objectId = $(this).data('object-id');
       if (objectId) {
         objectIdList.push(objectId);
@@ -951,8 +935,11 @@
   }
 
   $(document).on('click', '#warehouseSendItemsToPlayer', function () {
+    // Получаем выбранный элемент
     var selectedOption = $('#warehousePlayerSend option:selected');
+    // Получаем значение account из data-account
     var account = selectedOption.data('account');
+    // Получаем значение player из data-character
     var player = selectedOption.data('character');
 
     AjaxSend('/inventory/send', 'POST', {

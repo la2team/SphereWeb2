@@ -248,7 +248,7 @@ class donate
                   $item->getItemId(),
                   $item->getCount() * $quantity,
                   $item->getEnchant(),
-                  "purchase"
+                  123
                 );
                 if ( ! $data['success']) {
                     if (user::self()->isAdmin()) {
@@ -303,7 +303,7 @@ class donate
             $serverId = $shop['serverId'];
             foreach ($shop['items'] as $item) {
                 $shopObj = new shop();
-                $shopObj->setId($item['objectId']);
+                $shopObj->setId((int)$item['objectId']);
                 $shopObj->setServerId($serverId);
                 $shopObj->setCost($item['cost']);
                 $shopObj->setCount($item['count']);

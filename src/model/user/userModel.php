@@ -317,7 +317,7 @@ class userModel
 
         $sphere = \Ofey\Logan22\component\sphere\server::send(type::ACCOUNT_PLAYERS, [
           'email' => $this->getEmail(),
-        ])->show(false)->getResponse();
+        ])->getResponse();
 
         if (isset($sphere['error']) or ! $sphere) {
             return [];
@@ -330,7 +330,10 @@ class userModel
             $account->setCharacters($player['characters']);
             $this->account[] = $account;
         }
+
         $this->saveAccounts();
+
+        //        var_dump($this->account);exit();
         return $this->account;
     }
 
@@ -467,19 +470,6 @@ class userModel
             $isSphereSystem, //Означает что это зачисление от sphere
           ]
         );
-    }
-
-    /** Возвращает историю пожертвваний */
-    public function getHistoryDonate($getPoint = false)
-    {
-        if($getPoint){
-            $point = sql::getRow("SELECT SUM(donate_history_pay.point) AS `point` FROM donate_history_pay WHERE sphere = 0 AND user_id = ?;", [$this->getId()]);
-            if($point){
-                return $point['point'];
-            }
-            return 0;
-        }
-        return sql::getRows("SELECT * FROM `donate_history_pay` WHERE user_id = ?", [$this->getId()]);
     }
 
     public function isPlayer($playerName): characterModel|false

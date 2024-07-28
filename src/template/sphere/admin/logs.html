@@ -11,7 +11,7 @@
       <div class="card custom-card">
         <div class="card-header">
           <div class="card-title">
-            {{ phrase('output_sorting') }}
+            Сортировка
           </div>
         </div>
         <div class="card-body row">
@@ -23,7 +23,7 @@
             </select>
           </div>
           <div class="col-xl-4">
-            <button type="submit" class="btn btn-primary">{{ phrase('apply') }}</button>
+            <button type="submit" class="btn btn-primary">Применить</button>
           </div>
         </div>
 
@@ -34,23 +34,23 @@
       <div class="card custom-card">
         <div class="card-header">
           <div class="card-title">
-            {{phrase('auto_update_time')}}
+            Обновление
           </div>
         </div>
         <div class="card-body row">
 
           <div class="col-xl-8">
             <select id="update-time" class="js-example-placeholder-single js-states form-control">
-              <option value="3" selected>3 {{phrase('sec')}}.</option>
-              <option value="7">7 {{phrase('sec')}}.</option>
-              <option value="10">10 {{phrase('sec')}}.</option>
-              <option value="30">30 {{phrase('sec')}}.</option>
-              <option value="60">1 {{phrase('sec')}}.</option>
-              <option value="0">{{phrase('do_not_update')}}</option>
+              <option value="3" selected>3 сек.</option>
+              <option value="7">7 сек.</option>
+              <option value="10">10 сек.</option>
+              <option value="30">30 сек.</option>
+              <option value="60">1 мин.</option>
+              <option value="0">Не обновлять</option>
             </select>
           </div>
           <div class="col-xl-4">
-            <button type="submit" class="btn btn-primary">{{ phrase('apply') }}</button>
+            <button type="submit" class="btn btn-primary">Применить</button>
           </div>
 
         </div>
@@ -79,7 +79,7 @@
               <div class="flex-fill">
                 <div class="align-items-center">
                   <div class="mt-sm-0 mt-2">
-                    <p class="mb-0 fs-14 fw-semibold"><a href="/admin/user/info/{{log.user.id}}">{{log.user.email}} ({{log.user.name}})</a></p>
+                    <p class="mb-0 fs-14 fw-semibold">{{log.user.email}} ({{log.user.name}})</p>
                     <p class="mb-0 text-muted">{{log.message|raw}}</p>
                   </div>
                 </div>

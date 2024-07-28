@@ -61,8 +61,7 @@
         </li>
         {% endif %}
 
-        <li class="slide enable_send_balance_game" {% if config().enabled().isEnableSendBalanceGame()== false
-            %}style="display: none;" {% endif %}>
+        <li class="slide">
           <a href="#" data-bs-toggle="modal" data-bs-target="#sendToPlayer" class="side-menu__item">
             <i class="fe fe-corner-down-right side-menu__icon"></i>
             <span class="side-menu__label">{{phrase('donate_coin_to_game')|raw}}</span>
@@ -84,16 +83,6 @@
           <a href="/referral" class="side-menu__item">
             <i class="fe fe-users side-menu__icon"></i>
             <span class="side-menu__label">{{phrase(306)}}</span>
-          </a>
-        </li>
-        {% endif %}
-
-        {% if getUser().isAuth() %}
-        <li class="slide enable_ticket" {% if config().enabled().isEnableTicket() == false
-            %}style="display: none;" {% endif %}>
-          <a href="/ticket" class="side-menu__item">
-            <i class="fe fe-activity side-menu__icon"></i>
-            <span class="side-menu__label">{{phrase("menu_ticket")}}</span>
           </a>
         </li>
         {% endif %}
@@ -158,16 +147,21 @@
             <div class="d-flex align-items-center justify-content-center flex-wrap">
               <div class="row pt-2 pb-1 ">
 
-                <div class="fs-14 fw-semibold mb-2">
+                <div class="col-6 border-end">
                   {% if server.getStatus().getGameServer() %}
-                  <div class="fs-3 fw-semibold text-success">ONLINE</div>
+                  <div class="fs-3 fw-semibold text-success">ON</div>
                   {% else %}
                   <div class="fs-3 fw-semibold text-danger">OFF</div>
                   {% endif %}
                   <div class="fs-sm fw-semibold text-uppercase text-muted">{{phrase('status')}}</div>
-                </div> 
+                </div>
 
-                <div class="fw-semibold text-start text-center">Game Server: 
+                <div class="col-6">
+                  <div class="fs-3 fw-semibold">{{ server.getStatus().getOnline() }}</div>
+                  <div class="fs-sm fw-semibold text-uppercase text-muted">Online</div>
+                </div>
+
+                <div class="fw-semibold text-start text-center">
                   {{server.getName()}}
                 </div>
               </div>

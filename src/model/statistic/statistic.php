@@ -18,7 +18,6 @@ use Ofey\Logan22\component\image\crest;
 use Ofey\Logan22\component\redirect;
 use Ofey\Logan22\component\sphere\type;
 use Ofey\Logan22\model\db\sql;
-use Ofey\Logan22\model\lang\lang;
 use Ofey\Logan22\model\server\server;
 use Ofey\Logan22\model\server\serverModel;
 use Ofey\Logan22\model\user\auth\auth;
@@ -391,24 +390,15 @@ class statistic
 
         $result = '';
         if ($days > 0) {
-            $d = \Ofey\Logan22\component\lang\lang::get_phrase('d');
-            $daysStr = \Ofey\Logan22\component\lang\lang::get_phrase('days');
-            $result .= $days . ($reduce ? " {$d}. " : " {$daysStr}, ");
+            $result .= $days . ($reduce ? ' д. ' : ' дней, ');
         }
         if ($hours > 0) {
-            $h = \Ofey\Logan22\component\lang\lang::get_phrase('h');
-            $hoursStr = \Ofey\Logan22\component\lang\lang::get_phrase('hours');
-            $result .= $hours . ($reduce ? " {$h}. " : " {$hoursStr}, ");
+            $result .= $hours . ($reduce ? ' ч. ' : ' часов, ');
         }
         if ($minutes > 0) {
-            $m = \Ofey\Logan22\component\lang\lang::get_phrase('m');
-            $minutesStr = \Ofey\Logan22\component\lang\lang::get_phrase('minutes');
-            $result .= $minutes . ($reduce ? " {$m}. " : " {$minutesStr}, ");
+            $result .= $minutes . ($reduce ? ' м. ' : ' минут, ');
         }
-
-        $s = \Ofey\Logan22\component\lang\lang::get_phrase('s');
-        $secondsStr = \Ofey\Logan22\component\lang\lang::get_phrase('seconds');
-        $result .= $seconds . ($reduce ? " {$s}. " : " {$secondsStr}");
+        $result .= $seconds . ($reduce ? ' с.' : ' секунд');
 
         return $result;
     }

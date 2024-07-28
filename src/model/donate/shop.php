@@ -9,14 +9,14 @@ use Ofey\Logan22\model\item\item;
 
 class shop
 {
-    private string $id;
+    private string|int $id;
 
-    public function getId(): string
+    public function getId(): int
     {
-        return $this->id;
+        return (int)$this->id;
     }
 
-    public function setId(string $id): shop
+    public function setId(string|int $id): shop
     {
         $this->id = $id;
         return $this;

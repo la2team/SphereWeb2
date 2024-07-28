@@ -13,55 +13,55 @@
           <ul class="nav nav-tabs nav-tabs-header mb-0 d-sm-flex d-block" role="tablist">
             <li class="nav-item m-1">
               <a class="nav-link active" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#langSystem" aria-selected="true">Язык</a>
+                 href="#langSystem" aria-selected="true">{{ phrase('lang') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#donateSystem" aria-selected="true">Пожертвование</a>
+                 href="#donateSystem" aria-selected="true">{{ phrase('menu_donate') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#referralSystem" aria-selected="true">Реферальная</a>
+                 href="#referralSystem" aria-selected="true">{{ phrase(306) }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#functionsdata" aria-selected="true">Функции</a>
+                 href="#functionsdata" aria-selected="true">{{ phrase('functions') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#captchaSystem" aria-selected="true">Капча</a>
+                 href="#captchaSystem" aria-selected="true">{{ phrase('captcha') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#onlineCheating" aria-selected="true">Накрутка</a>
+                 href="#onlineCheating" aria-selected="true">{{ phrase('boosting') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#registration" aria-selected="true">Регистрация</a>
+                 href="#registration" aria-selected="true">{{ phrase('menu_registration') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#email" aria-selected="true">Почта</a>
+                 href="#email" aria-selected="true">{{ phrase('email') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#cache" aria-selected="true">Кэш</a>
+                 href="#cache" aria-selected="true">{{ phrase(320) }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#other" aria-selected="true">Разное</a>
+                 href="#other" aria-selected="true">{{ phrase(568) }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#template" aria-selected="true">Шаблон</a>
+                 href="#template" aria-selected="true">{{ phrase('template') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#logoImg" aria-selected="true">Лого</a>
+                 href="#logoImg" aria-selected="true">{{ phrase('logo') }}</a>
             </li>
             <li class="nav-item m-1">
               <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
-                 href="#palette" aria-selected="true">Палитра</a>
+                 href="#palette" aria-selected="true">{{ phrase('palette') }}</a>
             </li>
           </ul>
         </div>
@@ -74,7 +74,7 @@
                 <div id="langSettings" class="row mb-1">
 
                   <div class="col-xl-6">
-                    <label class="form-label">Используемые языки :</label>
+                    <label class="form-label">{{ phrase('used_languages') }} :</label>
 
                     {% for lang in getLangList() %}
                     <div class="form-check">
@@ -89,7 +89,7 @@
                   </div>
 
                   <div class="col-xl-6">
-                    <label class="form-label">Язык сайта по-умолчанию :</label>
+                    <label class="form-label">{{ phrase('default_site_language') }} :</label>
                     <select class="form-control" data-trigger name="default" id="langDefault">
                       {% for lang in getLangList() %}
                       <option {% if lang.lang== config().lang().getDefault() %}selected{% endif %}
@@ -116,9 +116,8 @@
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Платежная система по умолчанию</p>
-                          <p class="fs-12 text-muted mb-0">Платежная система будет выбрана по умолчанию для
-                            пользователей</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('default_payment_system') }}</p>
+                          <p class="fs-12 text-muted mb-0">{{ phrase('default_payment_system_for_users') }}</p>
                         </div>
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
                           <select class="form-control" data-trigger="" name="paySystemDefault" id="paySystemDefault">
@@ -134,18 +133,17 @@
                       <hr>
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Диапазон пожертвования</p>
-                          <p class="fs-12 text-muted mb-0">Укажите мин. и макс. число, которое пользователю разрешено
-                            вводить для пожертвований</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('donation_range') }}</p>
+                          <p class="fs-12 text-muted mb-0">{{ phrase('donation_min_max') }}</p>
                         </div>
 
                         <div class="col-xl-3">
-                          <label for="first-name" class="form-label">Мин. сумма</label>
+                          <label for="minSummaPaySphereCoin" class="form-label">{{ phrase('min_amount') }}</label>
                           <input value="{{config().donate().getMinSummaPaySphereCoin()}}" type="number"
                                  class="form-control" id="minSummaPaySphereCoin" placeholder="1">
                         </div>
                         <div class="col-xl-3">
-                          <label for="last-name" class="form-label">Макс. сумма</label>
+                          <label for="maxSummaPaySphereCoin" class="form-label">{{ phrase('max_amount') }}</label>
                           <input value="{{config().donate().getMaxSummaPaySphereCoin()}}" type="number"
                                  class="form-control" id="maxSummaPaySphereCoin" placeholder="999999">
                         </div>
@@ -155,9 +153,8 @@
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Стоимость 1 SphereCoin по отношению к 1 доллару</p>
-                          <p class="fs-12 text-muted mb-0">Укажите сколько получит пользователь SphereCoin за 1
-                            доллар</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('donate_coin_to_dollar') }}</p>
+                          <p class="fs-12 text-muted mb-0">{{ phrase('donate_coin_per_dollar') }}</p>
                         </div>
 
                         <div class="col-xl-3">
@@ -170,7 +167,7 @@
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Соотношение валют</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('currency_ratio') }}</p>
                         </div>
                         <div class="col-xl-2">
                           <label for="ratioUSD" class="form-label">USD</label>
@@ -198,12 +195,9 @@
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Включить накопительную систему скидок ?</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('enable_cumulative_discount_system') }}</p>
                           <p class="fs-12 text-muted mb-0">
-                            Накопительная система скидок, дает дополнительный бонус к сумме пополнения пользователем
-                            исходя из общей суммы пополнения аккаунтом пользователя за всё время.
-                            К примеру: Если выставлено сумма 100 и процент 10, и пользователь за всё время задонатил на
-                            100 SphereCoin, тогда мы даем ему 10% дополнительно, таким образом он получит 100 + 10.
+                            {{ phrase('cumulative_discount_description') }}
                           </p>
                         </div>
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
@@ -222,8 +216,8 @@
                                 <table class="table text-nowrap table-bordered" id="table_CumulativeDiscountSystem">
                                   <thead>
                                   <tr>
-                                    <th data-name="coin" scope="col">Кол-во SphereCoin</th>
-                                    <th data-name="percent" scope="col">Процент бонуса</th>
+                                    <th data-name="coin" scope="col">{{ phrase('amount_of_donate_coin') }}</th>
+                                    <th data-name="percent" scope="col">{{ phrase('bonus_percentage') }}</th>
                                     <th scope="col"></th>
                                   </tr>
                                   </thead>
@@ -247,7 +241,7 @@
                                   </tbody>
                                 </table>
                                 <button id="AddNewCumulativeDiscountSystem" type="button"
-                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">Добавить
+                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">{{ phrase(438) }}
                                 </button>
                               </div>
 
@@ -261,11 +255,9 @@
                       <hr>
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Включить разовый бонус ?</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('enable_one_time_bonus') }}</p>
                           <p class="fs-12 text-muted mb-0">
-                            Разовый бонус - это бонусный процент от кол-ва пополненных SphereCoin.
-                            Если у нас выставлено 5% за пополнение от 100 SphereCoin, тогда пользователь бонусом получит
-                            дополнительно ещё и 5 SphereCoin.
+                            {{ phrase('one_time_bonus_description') }}
                           </p>
                         </div>
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
@@ -283,8 +275,8 @@
                                 <table class="table text-nowrap table-bordered">
                                   <thead>
                                   <tr>
-                                    <th data-name="coin" scope="col">Кол-во SphereCoin</th>
-                                    <th data-name="percent" scope="col">Процент бонуса</th>
+                                    <th data-name="coin" scope="col">{{ phrase('amount_of_donate_coin') }}</th>
+                                    <th data-name="percent" scope="col">{{ phrase('bonus_percentage') }}</th>
                                     <th scope="col"></th>
                                   </tr>
                                   </thead>
@@ -306,7 +298,7 @@
                                   </tbody>
                                 </table>
                                 <button id="AddNewEnableOneTimeBonus" type="button"
-                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">Добавить
+                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">{{ phrase(438) }}
                                 </button>
                               </div>
 
@@ -322,13 +314,9 @@
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Включить систему скидок на покупку предметов ?</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('enable_item_purchase_discounts') }}</p>
                           <p class="fs-12 text-muted mb-0">
-                            Предоставляется скидка на покупку товара в Магазине, скидка формируется от общей суммы
-                            пожертвований пользователем за всё время.
-                            К примеру: Если пользователь пожертвовал за всё время N SphereCoin, тогда в магазине при
-                            покупке будет даваться скидка X%.
-
+                            {{ phrase('item_purchase_discount_description') }}
                           </p>
                         </div>
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
@@ -348,8 +336,8 @@
                                        id="table_SystemDiscountsOnItemPurchases">
                                   <thead>
                                   <tr>
-                                    <th data-name="coin" scope="col">Кол-во SphereCoin</th>
-                                    <th data-name="percent" scope="col">Процент бонуса</th>
+                                    <th data-name="coin" scope="col">{{ phrase('amount_of_donate_coin') }}</th>
+                                    <th data-name="percent" scope="col">{{ phrase('bonus_percentage') }}</th>
                                     <th scope="col"></th>
                                   </tr>
                                   </thead>
@@ -372,7 +360,7 @@
                                   </tbody>
                                 </table>
                                 <button id="AddNewSystemDiscountsOnItemPurchases" type="button"
-                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">Добавить
+                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">{{ phrase(438) }}
                                 </button>
                               </div>
 
@@ -388,12 +376,9 @@
 
                       <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Включить разовые скидки на покупку предметов по кол-ву</p>
+                          <p class="fs-14 mb-1 fw-semibold">{{ phrase('enable_quantity_discounts') }}</p>
                           <p class="fs-12 text-muted mb-0">
-                            Предоставляется скидка на покупку товара в Магазине, скидка формируется от общей суммы
-                            пожертвований пользователем за всё время.
-                            К примеру: Если пользователь пожертвовал за всё время N SphereCoin, тогда в магазине при
-                            покупке будет даваться скидка X%.
+                            {{ phrase('donation_based_discount') }}
                           </p>
                         </div>
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
@@ -414,8 +399,8 @@
                                        id="table_IncludeOneTimeDiscountsOnThePurchaseOfItemsByQuantity">
                                   <thead>
                                   <tr>
-                                    <th data-name="count" scope="col">Кол-во SphereCoin</th>
-                                    <th data-name="percent" scope="col">Процент бонуса</th>
+                                    <th data-name="count" scope="col">{{ phrase('amount_of_donate_coin') }}</th>
+                                    <th data-name="percent" scope="col">{{ phrase('bonus_percentage') }}</th>
                                     <th scope="col"></th>
                                   </tr>
                                   </thead>
@@ -439,22 +424,21 @@
                                   </tbody>
                                 </table>
                                 <button id="AddNewIncludeOneTimeDiscountsOnThePurchaseOfItemsByQuantity" type="button"
-                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">Добавить
+                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">{{ phrase(438) }}
                                 </button>
                               </div>
 
                             </div>
 
-                            Список ID предметов, на которые распостраняются скидки. Если пусто, тогда для всех предметов
-                            действует скидка.
+                            {{ phrase('discount_item_ids') }}
                             <div class="row">
 
                               <div class="table-responsive">
                                 <table class="table text-nowrap table-bordered" id="table_ListOfItemsForDiscount">
                                   <thead>
                                   <tr>
-                                    <th data-name="count" scope="col">Кол-во покупаемых предметов</th>
-                                    <th data-name="percent" scope="col">Процент скидки</th>
+                                    <th data-name="count" scope="col">{{ phrase('quantity_of_items_purchased') }}</th>
+                                    <th data-name="percent" scope="col">{{ phrase('discount_percentage') }}</th>
                                     <th scope="col"></th>
                                   </tr>
                                   </thead>
@@ -477,7 +461,7 @@
                                   </tbody>
                                 </table>
                                 <button id="AddNewListOfItemsForDiscount" type="button"
-                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">Добавить
+                                        class="btn btn-sm btn-success btn-wave waves-effect waves-light">{{ phrase(438) }}
                                 </button>
                               </div>
                             </div>
@@ -497,12 +481,12 @@
 
                   <div class="card custom-card shadow-none mb-4 border">
                     <div class="card-header">
-                      <div class="card-title">Перевод в игру</div>
+                      <div class="card-title">{{ phrase('transfer_to_game') }}</div>
                     </div>
                     <div class="card-body row">
 
-                      <label class="form-label op-5 ">Эти предметы отправляются игроку напрямую, при переводе через функцию "Перевод в игру"</label>
-                      <label class="form-label op-5 ">Укажите количество предметов, которое получит пользователь за 1 Donate Coin.</label>
+                      <label class="form-label op-5 ">{{ phrase('direct_transfer_items') }}</label>
+                      <label class="form-label op-5 ">{{ phrase('items_per_donate_coin') }}</label>
 
                       <div class="col-xxl-4 col-xl-6 ">
                         <div class="input-group">
@@ -535,7 +519,7 @@
                   <div id="bonus_Item_donation"
                        class="card custom-card shadow-none mb-4 border">
                     <div class="card-header justify-content-between d-sm-flex d-block">
-                      <div class="card-title">Награда за пожертвование предметами
+                      <div class="card-title">{{ phrase('item_donation_reward') }}
                       </div>
                       <div class="mt-sm-0 mt-2">
                         <div class="custom-toggle-switch ms-sm-2 ms-0">
@@ -551,19 +535,16 @@
 
                       <div class="row">
 
-                        <label class="form-label op-5 ">После пожертвование
-                          пользователь больше N суммы, мы выдаем ему предметы в
-                          склад как бонус. Укажите какие предметы хотите Выдавать
-                          пользователю и за какой диапазон пожертвований.</label>
+                        <label class="form-label op-5 ">{{ phrase('donation_bonus_items') }}</label>
 
                         <div class="px-4 py-3 border-top border-block-start-dashed d-sm-flex justify-content-end">
                           <div class="col-xl-4">
                             <input id="costItem" type="text"
-                                   class="form-control" placeholder="Стоимость">
+                                   class="form-control" placeholder="{{ phrase(72) }}">
                           </div>
                           <button id="addCostItem"
-                                  class="btn btn-primary-light m-1">Добавить
-                            вкладку<i class="bi bi-plus-lg ms-2"></i></button>
+                                  class="btn btn-primary-light m-1">{{ phrase(438) }}
+                            {{ phrase('tab') }}<i class="bi bi-plus-lg ms-2"></i></button>
                         </div>
                       </div>
 
@@ -598,9 +579,9 @@
                               <thead>
                               <tr>
                                 <th scope="col"></th>
-                                <th scope="col">Предмет</th>
-                                <th scope="col">Кол-во</th>
-                                <th scope="col">Заточен</th>
+                                <th scope="col">{{ phrase(301) }}</th>
+                                <th scope="col">{{ phrase(71) }}</th>
+                                <th scope="col">{{ phrase('enchant') }}</th>
                               </tr>
                               </thead>
                               <tbody>
@@ -656,7 +637,7 @@
                         </div>
                         <div class="col-xxl-2 col-xl-3 mb-2">
                           <button id="add_insert_to_bonus_donate" type="submit"
-                                  class="btn btn-primary">Добавить
+                                  class="btn btn-primary">{{ phrase(438) }}
                           </button>
                         </div>
                       </div>
@@ -666,7 +647,7 @@
                   <div class="card custom-card shadow-none mb-3 border">
                     <div class="card-header">
                       <div class="card-title">
-                        Настройка платежных систем
+                        {{ phrase('payment_system_settings') }}
                       </div>
                     </div>
                     <div class="card-body  align-items-start">
@@ -692,6 +673,7 @@
                         <div class="col-md-9">
                           <div class="tab-content" id="v-pills-tabContent">
                             {% for i, donate in config().donate().getDonateSystems() %}
+
                             <div class="tab-pane {% if i == 0 %}active show{% endif %}"
                                  id="{{donate.getName()}}" role="tabpanel"
                                  tabindex="0"
@@ -704,9 +686,7 @@
                                     <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                                       <div>
                                         <p class="fs-14 mb-1 fw-semibold">
-                                          Включить платежную
-                                          систему
-                                          {{donate.getName()}}</p>
+                                          {{ phrase('enable_payment_system') }} {{donate.getName()}}</p>
                                       </div>
                                       <div class="custom-toggle-switch ms-sm-2 ms-0">
                                         <input id="is_enable_{{donate.getName()}}"
@@ -721,8 +701,7 @@
                                     <div class="d-sm-flex d-block align-items-top mb-4 justify-content-between">
                                       <div>
                                         <p class="fs-14 mb-1 fw-semibold">
-                                          Включить только для администратора
-                                          {{donate.getName()}}</p>
+                                          {{ phrase('admin_only_enable') }} {{donate.getName()}}</p>
                                       </div>
                                       <div class="custom-toggle-switch ms-sm-2 ms-0">
                                         <input id="forAdmin_{{donate.getName()}}"
@@ -733,7 +712,6 @@
                                                class="label-primary mb-1"></label>
                                       </div>
                                     </div>
-
                                     {% for key, val in donate.getInputs() %}
                                     <div class="form-floating mb-3">
                                       <input data-name="{{key}}"
@@ -754,7 +732,7 @@
                                         class="form-control"
                                         id="description_{{donate.getName()}}"
                                         placeholder="">
-                                      <label for="description_{{donate.getName()}}">Описание платежной системы</label>
+                                      <label for="description_{{donate.getName()}}">{{ phrase('payment_system_description') }}</label>
                                     </div>
 
                                   </div>
@@ -771,7 +749,7 @@
                 <div class="card-footer mt-2">
                   <div class="float-end">
                     <button id="saveDonateConfig" type="button" class="btn btn-success">
-                      Сохранить
+                      Save
                     </button>
                   </div>
                 </div>
@@ -782,21 +760,21 @@
                 <li class="list-group-item text-center">
                   <div class="row gy-3 d-sm-flex align-items-center justify-content-between">
                     <div class="">
-                      <span class="fs-6 mb-0 badge bg-primary text-wrap">Требования для завершения реферальной системы привлеченному игроку</span>
+                      <span class="fs-6 mb-0 badge bg-primary text-wrap">Requirements for completing the referral system to a referred player</span>
                     </div>
                   </div>
                 </li>
                 <li class="list-group-item">
                   <div class="row gy-3 d-sm-flex align-items-center justify-content-between">
                     <div class="col-xl-6">
-                      <span class="fs-14 mb-0">Минимальное время проведенное в игре</span>
+                      <span class="fs-14 mb-0">Minimum time spent in the game</span>
                     </div>
                     <div class="col-xl-2">
                       <div class="form-floating mb-3">
                         <input value="{{config().referral().getTimeGame()}}" type="number" step="60"
                                class="form-control"
                                id="game_time_referral" placeholder="3600">
-                        <label for="game_time_referral">Секунды</label>
+                        <label for="game_time_referral">Seconds</label>
                       </div>
                     </div>
                   </div>
@@ -804,13 +782,13 @@
                 <li class="list-group-item">
                   <div class="row gy-2 d-sm-flex align-items-center justify-content-between">
                     <div class="col-xl-6">
-                      <span class="fs-14 mb-0">Минимальный уровень :</span>
+                      <span class="fs-14 mb-0">Minimum level :</span>
                     </div>
                     <div class="col-xl-2">
                       <div class="form-floating mb-3">
                         <input value="{{config().referral().getLevel()}}" type="number" step="1" class="form-control"
                                id="ref_level" placeholder="80">
-                        <label for="ref_level">Уровень</label>
+                        <label for="ref_level">Level</label>
                       </div>
                     </div>
                   </div>
@@ -818,7 +796,7 @@
                 <li class="list-group-item">
                   <div class="row gy-2 d-sm-flex align-items-center justify-content-between">
                     <div class="col-xl-6">
-                      <span class="fs-14 mb-0">Небходимые PvP / PK :</span>
+                      <span class="fs-14 mb-0">Necessary PvP / PK :</span>
                     </div>
                     <div class="col-xl-3">
 
@@ -842,7 +820,7 @@
                 <li class="list-group-item text-center">
                   <div class="row gy-3 d-sm-flex align-items-center justify-content-between">
                     <div class="">
-                      <span class="fs-6 mb-0 badge bg-primary text-wrap ">Выдача бонусов за выполнение требований (лидеру)</span>
+                      <span class="fs-6 mb-0 badge bg-primary text-wrap ">Issuing bonuses for fulfilling requirements (to the leader)</span>
                     </div>
                   </div>
                 </li>
@@ -850,14 +828,14 @@
                 <li class="list-group-item">
                   <div class="row gy-2 d-sm-flex align-items-center justify-content-between">
                     <div class="col-xl-6">
-                      <span class="fs-14 mb-0">Кол-во бонусных SphereCoin, которые получит игрок за завершения реферала :</span>
+                      <span class="fs-14 mb-0">Кол-во бонусных Donate Coin, которые получит игрок за завершения реферала :</span>
                     </div>
                     <div class="col-xl-2">
                       <div class="form-floating mb-3">
                         <input value="{{config().referral().getBonusAmount()}}" type="number" step="1"
                                class="form-control"
                                id="ref_bonus_amount" placeholder="80">
-                        <label for="ref_bonus_amount">SphereCoin</label>
+                        <label for="ref_bonus_amount">Donate Coin</label>
                       </div>
                     </div>
                   </div>
@@ -865,7 +843,7 @@
                 <li class="list-group-item">
                   <div class="row gy-2 d-sm-flex align-items-center justify-content-between">
                     <div class="col-xl-6">
-                      <span class="fs-14 mb-0">Если приглашенный пользователь задонатит, давать ли бонус-вознаграждение привлекшему реферела?</span>
+                      <span class="fs-14 mb-0">If an invited user donates, should the person who attracted the referral be given a bonus reward?</span>
                     </div>
                     <div class="col-xl-5">
                       <div class="custom-toggle-switch float-sm-end">
@@ -880,7 +858,7 @@
                 <li class="list-group-item">
                   <div class="row gy-2 d-sm-flex align-items-center justify-content-between">
                     <div class="col-xl-6">
-                      <span class="fs-14 mb-0">Установите процент вознаграждения от суммы пополнения SphereCoin?</span>
+                      <span class="fs-14 mb-0">Установите процент вознаграждения от суммы пополнения Donate Coin?</span>
                     </div>
                     <div class="col-xl-2">
                       <div class="form-floating mb-3">
@@ -895,7 +873,7 @@
                 <li class="list-group-item">
                   <div class="row gy-2 d-sm-flex align-items-center justify-content-between">
                     <div class="col-xl-6">
-                      <span class="fs-14 mb-0">Какой предмет будет выдан бонусом пользователю </span>
+                      <span class="fs-14 mb-0">What item will be given as a bonus to the user? </span>
                     </div>
                     <div class="col-xl-3">
                       <div class="form-floating mb-3">
@@ -911,7 +889,7 @@
                           <div class="form-floating mb-3 ">
                             <input value="" type="number" step="1" class="form-control "
                                    id="count_ref_bonus_leader" placeholder="10">
-                            <label for="count_ref_bonus_leader">Кол-во</label>
+                            <label for="count_ref_bonus_leader">Qty</label>
                           </div>
 
                           <div class="form-floating mb-3 ">
@@ -922,7 +900,7 @@
 
                           <div class="form-floating mb-3 ">
                             <button type="button" class="btn btn-success btn-wave waves-effect waves-light"
-                                    id="item_add_to_leader">Добавить
+                                    id="item_add_to_leader">{{ phrase(438) }}
                             </button>
                           </div>
 
@@ -976,7 +954,7 @@
                 <li class="list-group-item text-center">
                   <div class="row gy-3 d-sm-flex align-items-center justify-content-between">
                     <div class="">
-                      <span class="fs-6 mb-0 badge bg-primary text-wrap">Выдача бонусов за выполнение требований (приглашенному игроку)</span>
+                      <span class="fs-6 mb-0 badge bg-primary text-wrap">Issuing bonuses for fulfilling requirements (to an invited player)</span>
                     </div>
                   </div>
                 </li>
@@ -984,7 +962,7 @@
                 <li class="list-group-item">
                   <div class="row gy-2 d-sm-flex align-items-center justify-content-between">
                     <div class="col-xl-6">
-                      <span class="fs-14 mb-0">Какой предмет будет выдан бонусом пользователю </span>
+                      <span class="fs-14 mb-0">What item will be given as a bonus to the user?</span>
                     </div>
                     <div class="col-xl-3">
                       <div class="form-floating mb-3">
@@ -1000,7 +978,7 @@
                           <div class="form-floating mb-3 ">
                             <input value="" type="number" step="1" class="form-control "
                                    id="count_ref_bonus_slave" placeholder="10">
-                            <label for="count_ref_bonus_slave">Кол-во</label>
+                            <label for="count_ref_bonus_slave">Qty</label>
                           </div>
 
                           <div class="form-floating mb-3 ">
@@ -1011,7 +989,7 @@
 
                           <div class="form-floating mb-3 ">
                             <button type="button" class="btn btn-success btn-wave waves-effect waves-light"
-                                    id="item_add_to_slave">Добавить
+                                    id="item_add_to_slave">{{ phrase(438) }}
                             </button>
                           </div>
 
@@ -1079,7 +1057,7 @@
                   <div class="card custom-card shadow-none border">
                     <div class="card-body d-flex align-items-center justify-content-between flex-wrap gap-2">
                       <div class="">
-                        <span class="fw-semibold">Новости</span>
+                        <span class="fw-semibold">News</span>
                       </div>
                       <div>
                         <div class="custom-toggle-switch float-sm-end">
@@ -1096,7 +1074,7 @@
                   <div class="card custom-card shadow-none border">
                     <div class="card-body d-flex align-items-center justify-content-between flex-wrap gap-2">
                       <div class="">
-                        <span class="fw-semibold">Магазин</span>
+                        <span class="fw-semibold">Shop</span>
                       </div>
                       <div>
                         <div class="custom-toggle-switch float-sm-end">
@@ -1113,7 +1091,7 @@
                   <div class="card custom-card shadow-none border">
                     <div class="card-body d-flex align-items-center justify-content-between flex-wrap gap-2">
                       <div class="">
-                        <span class="fw-semibold">Баланс</span>
+                        <span class="fw-semibold">Balance</span>
                       </div>
                       <div>
                         <div class="custom-toggle-switch float-sm-end">
@@ -1129,7 +1107,7 @@
                   <div class="card custom-card shadow-none border">
                     <div class="card-body d-flex align-items-center justify-content-between flex-wrap gap-2">
                       <div class="">
-                        <span class="fw-semibold">Статистика</span>
+                        <span class="fw-semibold">Statistics</span>
                       </div>
                       <div>
                         <div class="custom-toggle-switch float-sm-end">
@@ -1146,7 +1124,7 @@
                   <div class="card custom-card shadow-none border">
                     <div class="card-body d-flex align-items-center justify-content-between flex-wrap gap-2">
                       <div class="">
-                        <span class="fw-semibold">Реферальная</span>
+                        <span class="fw-semibold">Referral</span>
                       </div>
                       <div>
                         <div class="custom-toggle-switch float-sm-end">
@@ -1159,11 +1137,12 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="col-xl-3">
                   <div class="card custom-card shadow-none border">
                     <div class="card-body d-flex align-items-center justify-content-between flex-wrap gap-2">
                       <div class="">
-                        <span class="fw-semibold">Тикет</span>
+                        <span class="fw-semibold">Ticket</span>
                       </div>
                       <div>
                         <div class="custom-toggle-switch float-sm-end">
@@ -1175,6 +1154,24 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="col-xl-3">
+                  <div class="card custom-card shadow-none border">
+                    <div class="card-body d-flex align-items-center justify-content-between flex-wrap gap-2">
+                      <div class="">
+                        <span class="fw-semibold">Transferring balance to the game</span>
+                      </div>
+                      <div>
+                        <div class="custom-toggle-switch float-sm-end">
+                          <input class="enableFunction" id="enable_send_balance_game" name="enable_send_balance_game" type="checkbox" {% if
+                                 config().enabled().isEnableSendBalanceGame() %}checked="" {% endif %}>
+                          <label for="enable_send_balance_game" class="label-success mb-1"></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
             <div class="tab-pane p-0" id="captchaSystem"
@@ -1186,7 +1183,7 @@
                     <ul class="nav nav-tabs flex-column nav-style-4" role="tablist">
                       <li class="nav-item" role="presentation">
                         <a class="nav-link active" data-bs-toggle="tab" role="tab" aria-current="page"
-                           href="#home-vertical" aria-selected="true">Простая капча</a>
+                           href="#home-vertical" aria-selected="true">Simple capcha</a>
                       </li>
                       <li class="nav-item" role="presentation">
                         <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page" href="#about-vertical"
@@ -1199,7 +1196,7 @@
                       <div class="tab-pane text-muted active show" id="home-vertical" role="tabpanel">
                         <div class="d-sm-flex d-block align-items-top justify-content-between mt-3">
                           <div>
-                            <p class="fs-14 mb-1 fw-semibold">Включить обычную капчу</p>
+                            <p class="fs-14 mb-1 fw-semibold">Enable regular captcha</p>
                             <p class="fs-12 mb-0 text-muted"></p>
                           </div>
                           <div>
@@ -1214,7 +1211,7 @@
                       <div class="tab-pane text-muted" id="about-vertical" role="tabpanel">
                         <div class="d-sm-flex d-block align-items-top justify-content-between mt-3">
                           <div>
-                            <p class="fs-14 mb-1 fw-semibold">Включить Google Captcha v2</p>
+                            <p class="fs-14 mb-1 fw-semibold">Turn on Google Captcha v2</p>
                             <p class="fs-12 mb-0 text-muted"></p>
                           </div>
                           <div>
@@ -1227,8 +1224,8 @@
                         </div>
                         <div class="card-body">
                           <div class="text-muted">
-                            Если Вы решите использовать Google reCAPTCHA V2<br>
-                            Ключи для капчи брать тут - <a href="https://www.google.com/recaptcha/admin/create">Регистрация на сайте Google</a>
+                           If you decide to use Google reCAPTCHA V2<br>
+                            Get captcha keys here- <a href="https://www.google.com/recaptcha/admin/create">Registration on the Google site</a>
                           </div>
 
                           <div class="form-floating mb-3">
@@ -1245,7 +1242,7 @@
                           <hr class="mt-3">
                           <p>
                             <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                              Пример ввода ключей капчи
+                              Example of entering captcha keys
                             </button>
                           </p>
                           <div class="collapse" id="collapseExample">
@@ -1273,7 +1270,7 @@
                 </div>
               </div>
               <div class="border-top border-block-start-dashed d-sm-flex justify-content-end">
-                <span id="saveCaptcha" class="btn btn-success-light m-1 btn-sm">Сохранить<i
+                <span id="saveCaptcha" class="btn btn-success-light m-1 btn-sm">Save<i
                   class="bi bi-sd-card ms-2"></i></span>
               </div>
             </div>
@@ -1292,15 +1289,15 @@
                                config().onlineCheating().isEnabled() %}checked="" {%endif%}>
                         <label for="isEnableOnlineCheaters" class="label-success mb-1"></label>
                       </div>
-                      <p class="fs-14 mb-1 fw-semibold">Включить накрутку онлайна</p>
+                      <p class="fs-14 mb-1 fw-semibold">Enable online cheating</p>
                       <p class="fs-12 mb-0 text-muted"></p>
                     </div>
 
                   </div>
 
-                  Сколько выводить (рандом) минимальное и максимальное кол-во онлайна (на случай если реальный онлайн
-                  0).<br>
-                  Если хотите чтоб онлайн был всегда 0 если онлайн действительно 0, то установите min и max 0
+                 How much to withdraw (randomly) the minimum and maximum number of online (in case the real online
+0).<br>
+                  If you want online to always be 0, if online is really 0, then set min and max to 0
 
                   <div class="row">
                     <div class="col-xl-2">
@@ -1317,14 +1314,14 @@
                   </div>
 
                   <hr>
-                  Кол-во онлайна => [ время => коэффициент накрутки онлайна ]<br>
+                 Number of online => [time => online boost factor]<br>
                   <br>
-                  К примеру: Онлайн 37 человек, время сейчас 10:57<br>
-                  Тогда коэффициент накрутки онлайна будет 3.15<br>
-                  Примечание: 37 человек - это между 30 и 60, а время 10:57 - это между 10:00 и 12:00<br>
-                  Это соответствует коэффициенту накрутки онлайна 3.15<br>
-                  37*3.15 = 116.55 онлайна, результат будет округляем до большего числа, таким образом получим 117
-                  онлайна.<br>
+                 For example: There are 37 people online, the time is now 10:57<br>
+Then the online boost factor will be 3.15<br>
+Note: 37 people is between 30 and 60, and the time 10:57 is between 10:00 and 12:00<br>
+This corresponds to an online boost factor of 3.15<br>
+37*3.15 = 116.55 online, the result will be rounded up to a higher number, so we get 117
+online.<br>
                   <br>
 
                   <div class="row">
@@ -1332,7 +1329,7 @@
                       <input id="players_online_cheating" min="1" type="number" class="form-control" placeholder="100">
                     </div>
                     <div class="col-auto">
-                      <button type="button" class="btn btn-info add-accordion-item">Добавить</button>
+                      <button type="button" class="btn btn-info add-accordion-item">{{ phrase(438) }}</button>
                     </div>
                   </div>
 
@@ -1351,8 +1348,8 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapseOne_{{online}}" aria-expanded="false"
                                 aria-controls="flush-collapseOne">
-                          Настройки для онлайна от : {{online}} {% if next_online != null %}и до : {{next_online}}
-                          онлайна{% endif %}
+                          Settings for online from : {{online}} {% if next_online != null %}and up to : {{next_online}}
+                          online{% endif %}
                         </button>
                       </h2>
                       <div id="flush-collapseOne_{{online}}" class="accordion-collapse collapse"
@@ -1366,7 +1363,7 @@
                               <input value="{{time.getTime()}}" class="form-control time-format-2" placeholder="hh:mm">
                             </div>
                             <div class="col-xl-2">
-                              В это время умножить онлайн на:
+At this time, multiply online by:
                             </div>
                             <div class="col-xl-2">
                               <input min="1" value="{{time.getMultiplier()}}" step="0.1" type="number"
@@ -1376,7 +1373,7 @@
                         </div>
                         {% endfor %}
                         <div class="col-md-12">
-                          <button type="button" class="btn btn-primary add-time">Добавить время</button>
+                          <button type="button" class="btn btn-primary add-time">{{ phrase(438) }} время</button>
                         </div>
                       </div>
                     </div>
@@ -1387,7 +1384,7 @@
 
                 </div>
                 <div class="border-top border-block-start-dashed d-sm-flex justify-content-end">
-                  <span id="saveCheatingOnline" class="btn btn-success-light m-1 btn-sm">Сохранить<i
+                  <span id="saveCheatingOnline" class="btn btn-success-light m-1 btn-sm">Save<i
                     class="bi bi-sd-card ms-2"></i></span>
                 </div>
               </div>
@@ -1401,16 +1398,16 @@
                   <div class="custom-toggle-switch d-flex align-items-center mb-4">
                     <input id="enablePrefix" name="enablePrefix" type="checkbox" {% if
                            config().registration().getEnablePrefix() %}checked="" {% endif %}>
-                    <label for="enablePrefix" class="label-success"></label><span class="ms-3">Включить префиксы</span>
+                    <label for="enablePrefix" class="label-success"></label><span class="ms-3">Enable Prefixes</span>
                   </div>
                 </div>
 
                 <div class="col-12">
                   <select class="form-select" id="prefixType">
                     <option {% if config().registration().getPrefixType()==
-                    "prefix" %}selected=""{% endif %} value="prefix" >Префикс</option>
+                    "prefix" %}selected=""{% endif %} value="prefix" >Prefix</option>
                     <option {% if config().registration().getPrefixType()==
-                    "suffix" %}selected=""{% endif %} value="suffix">Суффикс</option>
+                    "suffix" %}selected=""{% endif %} value="suffix">Suffix</option>
                   </select>
                 </div>
 
@@ -1418,7 +1415,7 @@
                   <div class="custom-toggle-switch d-flex align-items-center mb-4">
                     <input id="massRegistration" name="massRegistration" type="checkbox" {% if
                            config().registration().getMassRegistration() %}checked="" {% endif %}>
-                    <label for="massRegistration" class="label-success"></label><span class="ms-3">Включить регистрацию сразу на всех серверах</span>
+                    <label for="massRegistration" class="label-success"></label><span class="ms-3">Enable registration on all servers at once</span>
                   </div>
                 </div>
 
@@ -1427,15 +1424,15 @@
                   <div class="custom-toggle-switch d-flex align-items-center mb-4">
                     <input id="enableLoadFileRegistration" name="enableLoadFileRegistration" type="checkbox" {% if
                            config().registration().getEnableLoadFileRegistration() %}checked="" {% endif %}>
-                    <label for="enableLoadFileRegistration" class="label-success"></label><span class="ms-3">Загрузка файла информации о регистрации пользователем</span>
+                    <label for="enableLoadFileRegistration" class="label-success"></label><span class="ms-3">Uploading a User Registration Information File</span>
                   </div>
                 </div>
 
 
                 <div class="col-auto">
-                  <label class="" for="phraseRegistrationDownloadFile">Укажите ID фразы, которые будет получать
-                    пользователь.<br>
-                    Создать свою фразу можно <a href="/admin/phrases" target="_blank">тут</a>.
+                  <label class="" for="phraseRegistrationDownloadFile">Уindicate the ID of the phrase that will be received
+user.<br>
+You can create your own phrase<a href="/admin/phrases" target="_blank">here</a>.
                   </label>
                   <input value="{{ config().registration().getPhraseRegistrationDownloadFile() }}" type="text"
                          class="form-control" id="phraseRegistrationDownloadFile" placeholder="Phrase ID">
@@ -1444,7 +1441,7 @@
               </div>
 
               <div class="border-top border-block-start-dashed d-sm-flex justify-content-end">
-                <span id="saveRegistration" class="btn btn-success-light m-1 btn-sm">Сохранить<i
+                <span id="saveRegistration" class="btn btn-success-light m-1 btn-sm">Save<i
                   class="bi bi-sd-card ms-2"></i></span>
               </div>
 
@@ -1472,14 +1469,14 @@
                   <div class="col-md-6">
                     <div class="form-floating">
                       <input value="{{config().email().getUsername()}}" type="text" class="form-control" id="emailUsername" placeholder="Username">
-                      <label for="emailUsername">SMTP имя пользователя</label>
+                      <label for="emailUsername">SMTP username</label>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-floating">
                       <input value="{{config().email().getPassword()}}" type="text" class="form-control" id="emailPassword" placeholder="Password">
-                      <label for="emailPassword">SMTP пароль</label>
+                      <label for="emailPassword">SMTP password</label>
                     </div>
                   </div>
 
@@ -1498,29 +1495,29 @@
                   <div class="col-md-6">
                     <div class="form-check">
                       <input {% if config().email().isSmtpAuth() %}checked{% endif %} class="form-check-input" type="checkbox" id="emailSMTPAuth">
-                      <label class="form-check-label" for="emailSMTPAuth">SMTP Авторизация</label>
+                      <label class="form-check-label" for="emailSMTPAuth">SMTP Authorization</label>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-12 mt-3">
-                  <label class="form-label">Конструктор HTML письма</label>
+                  <label class="form-label">HTML letter constructor</label>
                   <div class="form-floating mb-3">
                     <input value="Ура, удалось отправить письмо!" type="text" class="form-control nosave" id="emailHeader" placeholder="Username">
-                    <label for="emailHeader">Заголовок письма</label>
+                    <label for="emailHeader">Letter header</label>
                   </div>
-                  <div id="email-html">Вы большой <strong>молодец</strong>, Вам удалось настроить почту для отправки писем😀😀😀😀!</div>
+                  <div id="email-html">you are great <strong>Well done</strong>, You managed to set up your email to send letters😀😀😀😀!</div>
                 </div>
 
                 <div class="row g-3 align-items-center mt-3">
                   <div class="col-md-6">
                     <div class="form-floating">
                       <input value="" type="email" class="form-control nosave" id="emailTestFromAddress" placeholder="Email Address for test">
-                      <label for="emailTestFromAddress">Email для проверки получения письма</label>
+                      <label for="emailTestFromAddress">Email to check receipt of the letter</label>
                     </div>
                   </div>
                   <div class="col-md-1">
-                    <button id="emailSendTest" type="submit" class="btn btn-success w-100">Отправить</button>
+                    <button id="emailSendTest" type="submit" class="btn btn-success w-100">Send</button>
                   </div>
                   <div class="col-md-3">
                     <p class="fs-14 mb-0 fw-semibold" id="emailSendTestResponse">{{response.message}}</p>
@@ -1530,25 +1527,25 @@
               </div>
 
               <div class="border-top border-block-start-dashed d-flex justify-content-end mt-3 pt-2">
-                <span id="saveEmail" class="btn btn-success-light m-1 btn-sm">Сохранить<i class="bi bi-sd-card ms-2"></i></span>
+                <span id="saveEmail" class="btn btn-success-light m-1 btn-sm">Save<i class="bi bi-sd-card ms-2"></i></span>
               </div>
             </div>
 
 
             <div class="tab-pane p-0" id="cache" role="tabpanel">
               <div class="card-body">
-                Указывайте в секундах время кэширования данных
+Specify the data caching time in seconds
                 <div class="row g-3 mt-0">
 
                   <div class="col-md-2">
-                    <label class="form-label">Форум</label>
+                    <label class="form-label">Forum</label>
                     <input id="forumCache" value="{{config().cache().getForum()}}" type="number" class="form-control"
                            placeholder="60"
                            aria-label="Форум">
                   </div>
 
                   <div class="col-md-2">
-                    <label class="form-label">Статус</label>
+                    <label class="form-label">Status</label>
                     <input id="statusCache" value="{{config().cache().getStatus()}}" type="number" class="form-control"
                            placeholder="60"
                            aria-label="Статус">
@@ -1567,21 +1564,21 @@
                   </div>
 
                   <div class="col-md-2">
-                    <label class="form-label">Кланы</label>
+                    <label class="form-label">Clans</label>
                     <input id="clanCache" value="{{config().cache().getClan()}}" type="number" class="form-control"
                            placeholder="60"
                            aria-label="Clan">
                   </div>
 
                   <div class="col-md-2">
-                    <label class="form-label">Замков</label>
+                    <label class="form-label">Castles</label>
                     <input id="castleCache" value="{{config().cache().getCastle()}}" type="number" class="form-control"
                            placeholder="60"
                            aria-label="Castle">
                   </div>
 
                   <div class="col-md-2">
-                    <label class="form-label">Рефералы</label>
+                    <label class="form-label">Referral</label>
                     <input id="referralCache" value="{{config().cache().getReferral()}}" type="number"
                            class="form-control" placeholder="60"
                            aria-label="Referral">
@@ -1592,7 +1589,7 @@
               </div>
 
               <div class="border-top border-block-start-dashed d-sm-flex justify-content-end">
-                <span id="saveCache" class="btn btn-success-light m-1 btn-sm">Сохранить<i
+                <span id="saveCache" class="btn btn-success-light m-1 btn-sm">Save<i
                   class="bi bi-sd-card ms-2"></i></span>
               </div>
 
@@ -1603,10 +1600,10 @@
                 <li class="list-group-item">
                   <div class="d-sm-flex d-block align-items-top justify-content-between mt-3">
                     <div>
-                      <p class="fs-14 mb-1 fw-semibold">Скрывать пароли игроков</p>
-                      <p class="fs-12 mb-0 text-muted">Функция необходима на случай если Вы используете лаунчер, с
-                        автовходом в игру на персонажа, без авторизации в игре. К примеру SphereLauncher обладает
-                        возможностью сделать автовход в игру (если клиент позволяет).</p>
+                      <p class="fs-14 mb-1 fw-semibold">Hide player passwords</p>
+                      <p class="fs-12 mb-0 text-muted">The function is necessary if you use a launcher with
+Automatic entry into the game for a character, without authorization in the game. For example, SphereLauncher has
+the ability to auto-login to the game (if the client allows it).</p>
                     </div>
                     <div>
                       <div class="custom-toggle-switch float-sm-end">
@@ -1621,9 +1618,9 @@
                 <li class="list-group-item">
                   <div class="d-sm-flex d-block align-items-top justify-content-between mt-3">
                     <div>
-                      <p class="fs-14 mb-1 fw-semibold">Технические работы</p>
-                      <p class="fs-12 mb-0 text-muted">Отключение сайта, вход и пользование доступно только для
-                        администраторов.</p>
+                      <p class="fs-14 mb-1 fw-semibold">Engineering works</p>
+                      <p class="fs-12 mb-0 text-muted">Оturning off the site, login and use is available only to
+administrators.</p>
                     </div>
                     <div>
                       <div class="custom-toggle-switch float-sm-end">
@@ -1638,7 +1635,7 @@
                 <li class="list-group-item">
                   <div class="d-sm-flex d-block align-items-top justify-content-between mt-3 row">
                     <div class="col-xl-12">
-                      <p class="fs-14 mb-1 fw-semibold">Сообщение о технической работе</p>
+                      <p class="fs-14 mb-1 fw-semibold">Technical work message</p>
                       <textarea class="form-control" id="messageTechnicalWork" rows="3">{{ config().other().getMessageTechnicalWork() }}</textarea>
                     </div>
                   </div>
@@ -1647,7 +1644,7 @@
                 <li class="list-group-item">
                   <div class="d-sm-flex d-block align-items-top justify-content-between mt-3 row">
                     <div class="col-xl-12">
-                      <p class="fs-14 mb-1 fw-semibold">Титул всех страниц</p>
+                      <p class="fs-14 mb-1 fw-semibold">Title of all pages</p>
                       <input value="{{ config().other().getAllTitlePage() }}" type="text" class="form-control"
                              id="allTitlePage" placeholder="SphereWeb">
                     </div>
@@ -1666,7 +1663,7 @@
                 <li class="list-group-item">
                   <div class="d-sm-flex d-block align-items-top justify-content-between mt-3">
                     <div>
-                      <p class="fs-14 mb-1 fw-semibold">Сохранять ли данные статистики онлайн игроков</p>
+                      <p class="fs-14 mb-1 fw-semibold">Should online player statistics be saved?</p>
                       <p class="fs-12 mb-0 text-muted"></p>
                     </div>
                     <div>
@@ -1685,22 +1682,22 @@
                     <div class="col-xl-12">
                       <div class="d-sm-flex d-block align-items-top justify-content-between mt-3">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Частота сохранения статистики онлайна</p>
+                          <p class="fs-14 mb-1 fw-semibold">Frequency of saving online statistics</p>
                         </div>
                         <div class="col-xl-2">
                           <select class="form-control" data-trigger name="timeoutSaveStatistic"
                                   id="timeoutSaveStatistic">
                             <option {% if config().other().getTimeoutSaveStatistic()== 300 %}selected{% endif %}
-                                    value="300" selected>5 мин
+                                    value="300" selected>5 min
                             </option>
                             <option {% if config().other().getTimeoutSaveStatistic()== 600 %}selected{% endif %}
-                                    value="600">10 мин
+                                    value="600">10 min
                             </option>
                             <option {% if config().other().getTimeoutSaveStatistic()== 1800 %}selected{% endif %}
-                                    value="1800">30 мин
+                                    value="1800">30 min
                             </option>
                             <option {% if config().other().getTimeoutSaveStatistic()== 3600 %}selected{% endif %}
-                                    value="3600">1 ч.
+                                    value="3600">1 h.
                             </option>
                           </select>
                         </div>
@@ -1714,7 +1711,7 @@
                     <div class="col-xl-12">
                       <div class="d-sm-flex d-block align-items-top justify-content-between mt-3">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">Умножить выводимый онлайн</p>
+                          <p class="fs-14 mb-1 fw-semibold">Multiply output online</p>
                         </div>
                         <div class="col-xl-2">
                           <input value="{{ config().other().getOnlineMul() }}" min="1.0" step="0.1" type="number"
@@ -1729,7 +1726,7 @@
                 <li class="list-group-item">
                   <div class="d-sm-flex d-block align-items-top justify-content-between mt-3">
                     <div>
-                      <p class="fs-14 mb-1 fw-semibold">Требовать авторизацию, чтоб зайти в ЛК</p>
+                      <p class="fs-14 mb-1 fw-semibold">Require authorization to log into your account</p>
                       <p class="fs-12 mb-0 text-muted"></p>
                     </div>
                     <div>
@@ -1747,8 +1744,8 @@
                     <div class="col-xl-12">
                       <div class="d-sm-flex d-block align-items-top justify-content-between mt-3">
                         <div>
-                          <p class="fs-14 mb-1 fw-semibold">TimeZone по умолчанию</p>
-                          <p class="fs-12 mb-0 text-muted">Для синхронизации времени, необходимо указать TimeZone</p>
+                          <p class="fs-14 mb-1 fw-semibold">Default TimeZone</p>
+                          <p class="fs-12 mb-0 text-muted">To synchronize time, you must specify TimeZone</p>
                         </div>
                         <div class="col-xl-2">
                           <select class="form-control" data-trigger name="timezone"
@@ -1769,7 +1766,7 @@
                 <li class="list-group-item">
                   <div class="row gx-5 gy-3">
                     <div class="col-xl-12">
-                      <p class="fs-14 mb-1 fw-semibold">Ссылка на главную страницу</p>
+                      <p class="fs-14 mb-1 fw-semibold">Link to home page</p>
                       <input value="{{ config().other().getLinkMainPage() }}" type="text" class="form-control"
                              id="linkMainPage" placeholder="/">
                     </div>
@@ -1781,7 +1778,7 @@
                   <div class="col-xl-12">
                     <div class="d-sm-flex d-block align-items-top justify-content-between mt-3">
                       <div>
-                        <p class="fs-14 mb-1 fw-semibold">Кол-во регистрируемых аккаунтов</p>
+                        <p class="fs-14 mb-1 fw-semibold">Number of registered accounts</p>
                       </div>
                       <div class="col-xl-2">
                         <input value="{{ config().other().getMaxAccount() }}" type="number" step="1"
@@ -1794,10 +1791,10 @@
                 <li class="list-group-item">
                   <div class="d-sm-flex d-block align-items-top justify-content-between mt-3 row">
                     <div class="col-xl-12">
-                      <p class="fs-14 mb-1 fw-semibold">Связь с администратором проекта</p>
-                      <p class="fs-12 mb-0 text-muted">Используйте HTML-тег <code>&lt;br&gt;</code> для переноса строк и
-                        другие теги для отображения текста. Иконки можно <a href="https://icons.getbootstrap.com/"
-                                                                            target="_blank">найти тут</a></p>
+                      <p class="fs-14 mb-1 fw-semibold">Contact the project administrator</p>
+                      <p class="fs-12 mb-0 text-muted">Use HTML tag <code>&lt;br&gt;</code> for line breaks and
+other tags for displaying text. Icons can be<a href="https://icons.getbootstrap.com/"
+                                                                            target="_blank">find here</a></p>
                       <textarea type="text" class="form-control" rows="6" id="contactAdmin" placeholder="">{{ config().other().getContactAdmin() }}</textarea>
                     </div>
                   </div>
@@ -1807,7 +1804,7 @@
 
 
               <div class="border-top border-block-start-dashed d-sm-flex justify-content-end">
-                <span id="saveOther" class="btn btn-success-light m-1 btn-sm">Сохранить<i
+                <span id="saveOther" class="btn btn-success-light m-1 btn-sm">Save<i
                   class="bi bi-sd-card ms-2"></i></span>
               </div>
             </div>
@@ -1834,7 +1831,7 @@
                       <div class="card custom-card">
                         <div class="card-header justify-content-between">
                           <div class="card-title">
-                            Информация о шаблоне
+                           Information about the template
                           </div>
                         </div>
                         <div class="card-body ">
@@ -1896,7 +1893,7 @@
               </div>
 
               <div class="border-top border-block-start-dashed d-sm-flex justify-content-end">
-                <span id="saveTemplate" class="btn btn-success-light m-1 btn-sm">Сохранить<i
+                <span id="saveTemplate" class="btn btn-success-light m-1 btn-sm">Save<i
                   class="bi bi-sd-card ms-2"></i></span>
               </div>
             </div>
@@ -1907,8 +1904,8 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xxl-6">
                   <div class="card overflow-hidden">
                     <div class="card-body">
-                      Изображение (лого) Вашего проекта. Лого выводится в верхней части страницы, над меню.
-                      <br> Рекомендуемое соотношение сторон: 3.5:1 или 4:1 (280px:80px, или 240px:60px)
+Image (logo) of your project. The logo is displayed at the top of the page, above the menu.
+                      <br> Recommended aspect ratio: 3.5:1 or 4:1 (280px:80px, or 240px:60px)
                       <input type="file" class="single-fileupload1 sphereLogo" name="filepond" data-type="logo"
                              data-max-file-size="3MB" data-max-files="1">
                     </div>
@@ -1918,7 +1915,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xxl-3">
                   <div class="card overflow-hidden">
                     <div class="card-body">
-                      Изображение иконки страницы (favicon). Иконка выводится во вкладках страниц.
+Image of the page icon (favicon). The icon is displayed in page tabs.
                       <input type="file" class="single-fileupload1 sphereLogo" name="filepond" data-type="favicon"
                              data-max-file-size="3MB" data-max-files="1">
                     </div>
@@ -2105,7 +2102,7 @@
               </div>
 
               <div class="border-top border-block-start-dashed d-sm-flex justify-content-end">
-                <span id="savePalette" class="btn btn-success-light m-1 btn-sm">Сохранить<i
+                <span id="savePalette" class="btn btn-success-light m-1 btn-sm">Save<i
                   class="bi bi-sd-card ms-2"></i></span>
               </div>
 
@@ -2244,7 +2241,7 @@
           formData[key] = attr.value;
         }
       });
-      //добавить в formData style
+      //{{ phrase(438) }} в formData style
       var style = $('html').attr('style');
       if (style) {
         formData['style'] = style;
@@ -2679,7 +2676,7 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="flush-heading${numItems}">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${numItems}" aria-expanded="false" aria-controls="flush-collapse${numItems}">
-                    Для онлайна: ${numItems}
+                    For online: ${numItems}
                 </button>
             </h2>
             <div id="flush-collapse${numItems}" class="accordion-collapse collapse" aria-labelledby="flush-heading${numItems}" data-bs-parent="#accordionFlushExample">
@@ -2689,7 +2686,7 @@
                             <input class="form-control time-format-2" placeholder="hh:mm">
                         </div>
                         <div class="col-xl-3">
-                            В это время онлайн умножить онлайн на:
+At this time online multiply online by:
                         </div>
                         <div class="col-xl-2">
                             <input value="1" step="0.1" type="number" class="form-control" placeholder="1">
@@ -2697,7 +2694,7 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-primary add-time">Добавить время</button>
+                    <button type="button" class="btn btn-primary add-time">{{ phrase(438) }} время</button>
                 </div>
             </div>
         </div>`;
@@ -2802,6 +2799,7 @@
         inputsData[inputName] = inputValue; // Сохраняем данные поля
       });
 
+
       // Собираем и сохраняем данные платежной системы
       systemsData.push({
         [payName]: {
@@ -2815,6 +2813,7 @@
 
     return systemsData;
   }
+
 
   $('#templateSelect').change(function () {
     let selectedTemplate = $(this).val();

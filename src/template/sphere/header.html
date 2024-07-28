@@ -61,8 +61,8 @@
       <!-- End::header-element -->
 
       {# -------------------------------------------------------------- #}
-
-      <div class="header-element cart-dropdown">
+      <div class="header-element cart-dropdown enable_send_balance_game" {% if config().enabled().isEnableSendBalanceGame()== false
+           %}style="display: none;" {% endif %}>
         <!-- Start::header-link|dropdown-toggle -->
         <a data-bs-toggle="modal" data-bs-target="#sendToPlayer" href="javascript:void(0);" class="header-link bg-info-transparent" >
           <span class="fs-14 fw-semibold text-info">{{phrase('donate_coin_to_game')|raw}}</span>
@@ -165,8 +165,8 @@
             aria-labelledby="mainHeaderProfile">
           <li class="drop-heading d-xxl-none d-block">
             <div class="text-center">
-              <h5 class="text-dark mb-0 fs-14 fw-semibold">Json Taylor</h5>
-              <small class="text-muted">Web Designer</small>
+              <h6 class="fw-semibold mb-0 lh-1 fs-14">{{getUser().getName()}}</h6>
+              <span class="op-7 fw-normal d-block fs-11 text-muted">{{getUser().getEmail()}}</span>
             </div>
           </li>
           {% if getUser().isAuth() %}

@@ -32,7 +32,7 @@ class donate {
             if($count<=0){
                 board::notice(false, "Не может быть меньше чем 0");
             }
-            $item['objectId'] = hrtime(true) . mt_rand(1000, 9999);
+            $item['objectId'] = mt_rand(1, 100) . hrtime(true) % time() . mt_rand(1, 100);
             if(!item::getItem($item['itemId'])){
                 board::notice(false, "ID Предмета не найдено");
             }
@@ -73,7 +73,7 @@ class donate {
                  }
              }
              if(empty($items)){
-                sql::run("DELETE FROM `sphere`.`shop_items` WHERE `id` = ?", [$shopId]);
+                sql::run("DELETE FROM `shop_items` WHERE `id` = ?", [$shopId]);
              }else{
                  $newItemsJson = json_encode(array_values($items));
                  sql::run("UPDATE `shop_items` SET `items` = ? WHERE id = ?", [
